@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Adding RSS Content to Your Hompeage</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#adding_rss_content_to_your_hompeage">Adding RSS Content to Your Hompeage</a></li>
+	<ul>
+
+		<li><a href="#installing_magpierss">Installing MagpieRSS</a></li>
+		<li><a href="#basic_use_of_magpie">Basic Use of Magpie</a></li>
+		<li><a href="#advanced_use">Advanced Use</a></li>
+		<li><a href="#extending_the_hack">Extending the Hack</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="adding_rss_content_to_your_hompeage">Adding RSS Content to Your Hompeage</a></h1>
+<p>Your homepage is your representation of who you are: information, pictures, or a general description of who you are. Most homepages have a short bio, a random picture, and a quote or two to go along with it. You'll find links to other content on the site, but it's the kind of page that you write once and forget about. Yet it's the first page your users will come to - so why shouldn't they get updated content when they stop by?</p>
+<p>Using MagpieRSS, it's possible to integrate content of an RSS feed into your homepage, if you're managing your content with PHP. No longer must you only have static content on your homepage! No longer must you be the unchanging scourge of the internet! Simply follow these easy steps.</p>
+<p>Note, however, that this hack requires you to have an RSS feed of content you want to include. It is generally directed at someone with a seperate section of their website which is updated regularly and offers an RSS feed. This hack will help you mirror your more dynamic content to the homepage of your site, but it can't create content for you!</p>
+<p>
+</p>
+<h2><a name="installing_magpierss">Installing MagpieRSS</a></h2>
+<p>First step to this hack is to download MagpieRSS from the MagpieRSS homepage, <a href="http://magpierss.sourceforge.net/">http://magpierss.sourceforge.net/</a>. Once you've downloaded the latest release from Sourceforge, you will need to create a directory in your webroot to store the include files that MagpieRSS needs. The documentation suggests a ``magpierss'' directory.</p>
+<p>Once you've created this directory, copy the four include files (rss_fetch.inc, rss_parser.inc, rss_cache.inc, and rss_utils.inc), and the directory extlib (which contains a modified version of the Snoopy HTTP client) into the directory.</p>
+<p>That's it. You've installed the MagpieRSS library.</p>
+<p>
+</p>
+<h2><a name="basic_use_of_magpie">Basic Use of Magpie</a></h2>
+<p>First step is to include the MagpieRSS library in your PHP page. If you created a ``magpierss'' folder in your web directory, and your homepage is at the root of that structure, you can simply use the line:
+</p>
+<pre>
+
+   require_once('magpierss/rss_fetch.inc');</pre>
+<p>Once you've done this, you can parse an RSS feed into a variable:</p>
+<pre>
+    $rss = fetch_rss(&quot;<a href="http://crschmidt.net/blog/feed/rdf&quot">http://crschmidt.net/blog/feed/rdf&quot</a>;);</pre>
+<p>Once you've done this, you can iterate over the items, printing a title and link for each of them:</p>
+<pre>
+    echo &quot;&lt;ul&gt;&quot;;
+    foreach ($rss-&gt;items as $item) {
+        $title = $item['title'];
+        $href = $item['link'];
+        echo &quot;&lt;li&gt;&lt;a href='$href'&gt;$title&lt;/a&gt;&lt;/li&gt;&quot;;
+    }
+    echo &quot;&lt;/ul&gt;&quot;;</pre>
+<p>Simple! You now have a list of the entries in your RSS feed - useful if you simply want an up-to-date sidebar, but not the most useful thing if you want to provide a quick summary of some of the more recent items, rather than just a link.</p>
+<p>So, what if you want to include the content of the last post, and then the latest three headlines, instead of just the headlines for each?</p>
+<p>
+</p>
+<h2><a name="advanced_use">Advanced Use</a></h2>
+<p>If you want to display a different kind of text for the first entry than the rest of the entries parsed from the RSS feed, the first step is to seperate that entry out, and print the entry as you want it. For my RSS feed, I display the &lt;description&gt; tag, which has a shortened version of the content:</p>
+<pre>
+    $item = $rss-&gt;items[0];
+    $title = $item['title'];
+    $href = $item['link'];
+    echo &quot;
+      &lt;p&gt;
+        &lt;a href='$href'&gt;$title&lt;/a&gt;
+        &lt;br /&gt;&quot;.$item['description'].&quot; &lt;a href='$href'&gt;[more]&lt;/a&gt;
+      &lt;/p&gt;&quot;;</pre>
+<p>With this, we get a header, and a small description in a paragraph layout. Next, we want to take four more entries out of the RSS entry array, so that we can use the loop from above over them, creating a list of entries.</p>
+<pre>
+    $rss = array_slice($rss-&gt;items, 1, 5);
+    echo &quot;&lt;ul&gt;&quot;;
+    foreach ($rss as $item) {
+        $title = $item['title'];
+        $href = $item['link'];
+        echo &quot;&lt;li&gt;&lt;a href='$href'&gt;$title&lt;/a&gt;&lt;/li&gt;&quot;;
+    }
+    echo &quot;&lt;/ul&gt;&quot;;</pre>
+<p>This will generate the list from above, with the first through fifth items. This allows us to display the first five items from the RSS feed, in a way that's more appealing and provides more information to the casual reader than simple links do.</p>
+<p>Although the examples here are based around a simple RSS 1.0 feed, they should work just as well with most RSS 2.0 feeds. In addition, it's possible to use other elements included in the RSS feed, whether they are extended via namespaces or in some other way. RSS 1.0 feeds often include a dc:date property for the time the entry was made: using Magpie, this can be accessed as <code>$item['dc']['date']</code>. Magpie offers a built-in parser for the W3C Date/Time Format, which can be used to turn this element into a usable timestamp:</p>
+<pre>
+    require_once('magpierss/rss_utils.inc');
+    $time = parse_w3cdtf($item['dc']['date']);
+    $date = date(&quot;D M j G:i:s T Y&quot;, $time);</pre>
+<p>The date variable now holds a date string of the form ``Sat Aug 27 4:22:00 EDT 2005''. A similar method can be used against valid RSS 2.0 feeds which include the pubDate element: this element uses the W3C DTF for representation of the date and time as well.</p>
+<p>
+</p>
+<h2><a name="extending_the_hack">Extending the Hack</a></h2>
+<p>Once your website receives a significant amount of load, you may notice that constantly parsing the RSS feed for information is too many hits on your RSS feed. Magpie offers built in caching for this case. By default, Magpie will attempt to cache parsed RSS data in a ``cache'' directory directly below the location of the PHP file calling rss_fetch. This directory must exist, and be writable by the webserver, in order for Magpie to successfully use this cache.</p>
+<p>If you can not create a webserver-writable cache directory in this location, it is possible to assign a different cache directory, by defining the MAGPIE_CACHE_DIR variable.</p>
+<pre>
+    define('MAGPIE_CACHE_DIR', '/tmp/magpie_cache');</pre>
+<p>Note that this file will contain all the information the RSS feed does, so if it is designed to be private or otherwise protected, you will need to take the same precautions in protecting the cache directory as you do for the content displayed on the web.</p>
+<p>Never again be caught with static, out of date content on your homepage! Use Magepie to fetch and display RSS information on your homepage, and keep everything on the site in sync!
+</p>
+
+</body>
+
+</html>

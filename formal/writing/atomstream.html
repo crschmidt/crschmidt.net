@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Watch LiveJournal Entries Flow By</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#watch_livejournal_entries_flow_by">Watch LiveJournal Entries Flow By</a></li>
+	<ul>
+
+		<li><a href="#installing_prerequisites">Installing Prerequisites</a></li>
+		<li><a href="#connecting__dumping_data">Connecting, Dumping Data</a></li>
+		<li><a href="#working_with_xml__atom">Working With XML::Atom</a></li>
+		<li><a href="#extending_the_hack">Extending the Hack</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="watch_livejournal_entries_flow_by">Watch LiveJournal Entries Flow By</a></h1>
+<p>LiveJournal recently released a streaming Atom format of their latest entries. This format allows you to connect to LiveJournal's servers and directly receive the content via a persistent connection as it flows in. This allows you to perform all kinds of nifty tricks with the data. Given the huge number of postings that LiveJournal receives -- multiples every second, sometimes up to 300 per minute -- this streaming format provides a boon for statisticians. For some people, however, it's just fun to watch the text flow by.</p>
+<p>Using Perl modules specifically designed for parsing both Atom and the stream of data that LiveJournal provides, this hack will demonstrate how to work with Atom entries and obtain their content, using the streaming data as an example, resulting in a command line script which can deliver titles, links, and if desired, content for the entries passing through the server.</p>
+<p>
+</p>
+<h2><a name="installing_prerequisites">Installing Prerequisites</a></h2>
+<p>This hack uses a number of rather esoteric Perl modules. The prerequisites are:</p>
+<pre>
+  XML::Atom
+  XML::Atom::Stream</pre>
+<p>However, these require a significant number of dependancies, and the latest version of XML::Atom at the time of this writing (0.13) is required for XML::Atom::Stream. These modules can be installed via CPAN: for more information on how to install Perl modules, consult the CPAN documentation.</p>
+<p>
+</p>
+<h2><a name="connecting__dumping_data">Connecting, Dumping Data</a></h2>
+<p>First, we'll demonstrate how to simply connect to the stream, and dump the data out using Perl's Data::Dumper. The stream runs on port 8081 under the domain <code>updates.sixapart.com</code>. To see the data as it's coming down the pipe, you can connect using using telnet:</p>
+<pre>
+    $ telnet updates.sixapart.com 8081
+    Trying 66.150.15.140...
+    Connected to danga.com.
+    Escape character is '^]'.
+    GET /atom-stream.xml HTTP/1.0</pre>
+<p>Followed by a final return, this will start the stream of entries into a terminal. You can see that it is a series of atom Feed elements, each containing a single entry. Additionally, every second, a &lt;time&gt; element is sent with the current epoch time. However, the specifics of this format aren't important to us, because we will be using XML::Atom::Stream to connect, which will take care of this for us.</p>
+<p>Using XML::Atom::Stream, we define a URL from which we're going to fetch the Atom stream, and initialize a callback function to be called whenever a new entry is received. This callback will receive an instance of XML::Atom::Feed as the source, which will allow the callback to work from that Feed and fetch entries or other aspects of the Feed presented by LiveJournal.</p>
+<p>The code below is the basic starting point, provided as an example by XML::Atom::Stream.</p>
+<pre>
+    use XML::Atom::Stream;
+    my $url = &quot;<a href="http://updates.sixapart.com:8081/atom-stream.xml&quot">http://updates.sixapart.com:8081/atom-stream.xml&quot</a>;;
+    
+    my $client = XML::Atom::Stream-&gt;new(
+        callback =&gt; \&amp;callback,
+    );
+    $client-&gt;connect($url);
+    
+    sub callback {
+        my @atom = @_;
+    }</pre>
+<p>This is the initial connection work -- from this point on, all work can take place in the <code>callback</code> subroutine, working from the Feed provided by the Stream.</p>
+<p>
+</p>
+<h2><a name="working_with_xml__atom">Working With XML::Atom</a></h2>
+<p>The @atom variable we created in the callback is an XML::Atom::Feed instance. These instances are generally generated from full feeds, rather than a single entry, so the method for retreiving the entry out of the feed is to loop over the $atom-&gt;entries. Each entry has title, content, and link properties we'll use:</p>
+<pre>
+    foreach my $entry ($atom-&gt;entries) {
+        my $title = $entry-&gt;title;
+        my $content = $entry-&gt;content;
+        my $link = $entry-&gt;link;</pre>
+<p>From here, we want to obtain, and print, the content of each of these elements. However, many entries on LiveJournal don't have titles, so we'll want to do a bit of logic to ensure that we're displaying some kind of title:</p>
+<pre>
+        if (!$title) {
+            $title = substr($content-&gt;body, 0, 50);
+            $title =~ s/[\r\n]+/ /g;
+        }
+        print $title.&quot;\n&quot;;</pre>
+<p>Here, we can see that we are printing the first 50 characters of the body if there is no title - otherwise we print out the title of the post, as assigned by the user.</p>
+<p>The last step is to print the link, so we know where it's coming from:</p>
+<pre>
+        print $link-&gt;href.&quot;\n\n&quot;;
+      }</pre>
+<p>Now we have a script that will connect, and print out the titles and links that flow by our client listening to LiveJournal's entries.</p>
+<p>
+</p>
+<h2><a name="extending_the_hack">Extending the Hack</a></h2>
+<p>One fun aspect of LiveJournal is the huge amount of content that will come down the pipe. With the huge number of words coming at you, you can evaluate content for the word used the most, for example. To access the content, you can use $content-&gt;body, as demonstrated in the case with no title above. There may also be a number of other similar tricks with displaying content as it comes in.</p>
+
+</body>
+
+</html>

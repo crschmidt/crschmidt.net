@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Wordpress Daily Delicious Post</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#wordpress_daily_delicious_post">Wordpress Daily Delicious Post</a></li>
+	<ul>
+
+		<li><a href="#getting_the_script">Getting the Script</a></li>
+		<li><a href="#configuring_the_script">Configuring the Script</a></li>
+		<li><a href="#using_the_script">Using the Script</a></li>
+		<li><a href="#final_setup">Final Setup</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="wordpress_daily_delicious_post">Wordpress Daily Delicious Post</a></h1>
+<p>We've already discussed ways to include content from an RSS feed in the sidebar of your homepage or weblog, and how to pull in del.icio.us links using the RSS feed. But sometimes, you don't want the links to go to the sidebar: you want to actually show the links off to the world. Not everyone is going to read your del.icio.us links RSS feed, but if you make a daily post with them, there's a chance your readers will skim them and see something they like.</p>
+<p>This is where Wordpress's del.icio.us Daily hack comes in. A script designed to be run as a cron job to post your daily links, this will let other users see the links you're bookmarking as an entry in your weblog.</p>
+<p>
+</p>
+<h2><a name="getting_the_script">Getting the Script</a></h2>
+<p>The Daily Delicious script has a wiki page <a href="http://wiki.dot-totally.co.uk/Daily_Delicious">http://wiki.dot-totally.co.uk/Daily_Delicious</a> where links to the source can be found. The most up to date version of the script as of this writing is at <a href="http://rawsocket.org/wp-content/wp-images/delicious.txt">http://rawsocket.org/wp-content/wp-images/delicious.txt</a>. Like our other PHP based RSS hacks, this uses the Magpie RSS library, so you must install it before using this hack.</p>
+<p>
+</p>
+<h2><a name="configuring_the_script">Configuring the Script</a></h2>
+<p>There are a number of variables which need confiruation before the script can be used. You will need to set the wp_path and magpie_path to the directories where these files are stored: for example, <code>/home/crschmidt/www/blog/</code> and <code>/home/crschmidt/www/magpierss</code>. Your del.icio.us username should be stored in the $del_user variable.</p>
+<p>The wp_userid and wp_catid variables must be obtained from the Wordpress admin interface. While logged into the admin section of your weblog, click Manage, then Categories. This will show a list of the categories on the blog, allowing you to choose one by the ID displayed alongside it. To find a user ID with which you wish to post, first click Users, then Authors and Users. This will allow you to find a user ID. Comment status, pingback status, title, and post slug can all be set as well.</p>
+<p>
+</p>
+<h2><a name="using_the_script">Using the Script</a></h2>
+<p>Once you have edited the variables you wish to, you will need to run the script to test it. How you do this depends on what you have available for processing PHP. Many systems include a PHP command line interpreter: if this is true of your system, you will be able to run the script by simply typing:</p>
+<pre>
+    php delicious.php</pre>
+<p>at the commandline. However, if that is not the case, you will need to place the script in a web-accessible directory, and use something like curl to fetch the file:</p>
+<pre>
+    curl -s -o /dev/null <a href="http://example.com/delicious.php">http://example.com/delicious.php</a></pre>
+<p>However, since any time this script is hit, it will post all the links of the day, you should take care to ensure that this file is protected. One way to do this is to enabled Authentication against the location of the file: curl can then use a URL like <a href="http://username:password@example.com/delicious.php,">http://username:password@example.com/delicious.php,</a> so that random users can not post the links, but it can still be automated. For more on authentication in your webserver, please consult your webserver's documentation.</p>
+<p>
+</p>
+<h2><a name="final_setup">Final Setup</a></h2>
+<p>Once the script is in place as you want it, you can add a task to cron to post these links daily:</p>
+<pre>
+    55 23 * * * php /home/crschmidt/delicious.php</pre>
+<p>This will post the links at 11:55 PM every day, to get all the links from the day included.</p>
+
+</body>
+
+</html>

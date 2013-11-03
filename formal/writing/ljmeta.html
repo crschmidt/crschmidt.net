@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Find Current Mood and Music of LiveJournal Users</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#find_current_mood_and_music_of_livejournal_users">Find Current Mood and Music of LiveJournal Users</a></li>
+	<ul>
+
+		<li><a href="#how_it_works">How It Works</a></li>
+		<li><a href="#the_complete_listing">The Complete Listing</a></li>
+		<li><a href="#hacking_the_hack">Hacking the Hack</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="find_current_mood_and_music_of_livejournal_users">Find Current Mood and Music of LiveJournal Users</a></h1>
+<p>One of the primary benefits of XML and RSS is that it is extensible to include information not originally designed for inclusion in RSS. The use of a seperate namespace to store original data is taken advantage of in a number of ways, and using this extended data, it is possible to obtain some interesting information from RSS feeds. One example of this is LiveJournal's RSS feeds, which include music and mood metadata in an extension namespace.</p>
+<p>LiveJournal has a number of site-specific metadata keys attached to every post: categories, stored as tags, music and mood. Depending on how the metadata is stored by the user, this information may be extremely useful, or may simply be blank or not included. Recently, LiveJournal began exporting this information in their RSS feeds. This allows for external tools to extract this data and work with it in a way that was not possible in the past.</p>
+<p>Oftentimes, this information on a short term basis is not all that interesting: moods over the 25 posts included in RSS don't tend to be all that interesting. However, it is possible to aggregate this information across an entire group of people on LiveJournal, and building up these aggregate statistics can prove to display interesting effects. One project, called MoodGrapher (<a href="http://ilps.science.uva.nl/cgi-bin/livejournal/mood">http://ilps.science.uva.nl/cgi-bin/livejournal/mood</a>) seeks to establish general trends in LiveJournal moods using this data. An example output is shown in the analysis of the mood of LiveJournal users after the London bombing (<a href="http://ilps.science.uva.nl/moodgrapher/london.html">http://ilps.science.uva.nl/moodgrapher/london.html</a>).</p>
+<p>Rather than analyze moods on a global or sitewide scale, it is possible to analyze a specific user or group of users. This may show localized trends, or it may show trends over time in how a user feels at a specific time of day.</p>
+<p>In addition to the mood metadata, music metadata is exported. This allows for a number of hacks: for example, when an RSS feed updates, the latest music could be opened in the iTunes Music Store for purchase, or your library could be searched for whether you have the song or not.</p>
+<p>This hack is designed to act as a building block for further expansion using metadata from LiveJournal RSS feeds. It will download the most recent RSS feed for a user, then return a data structure with the associated metadata. This metadata can then be manipulated for any number of other hacks.</p>
+<p>
+</p>
+<h2><a name="how_it_works">How It Works</a></h2>
+<p>Additional metadata in RSS is typically associated with an extension namespace. In the case of LiveJournal's mood and music metadata, this namespace is one specific to LiveJournal, <code>http://www.livejournal.org/rss/lj/1.0/</code>. If you download a LiveJournal RSS file, you will see two up to two additional elements inside each &lt;item&gt;:  &lt;lj:mood&gt; and &lt;lj:music&gt;. These tags contain text strings assigned by the authors of the post.</p>
+<p>LiveJournal's RSS feeds are provided in RSS 2.0. Since we're only looking at parsing the data out of this particular type of feed, doing so is relatively simple. However, note that using this technique, most RSS feeds, including versions in the 1.0 and 2.0 branch.</p>
+<p>This hack is written in Python, and uses the minidom module to parse XML. This module is included by default in Python versions greater than 2.1. As such, it should be included on any modern system.</p>
+<p>First, we import the modules we want to use.</p>
+<pre>
+ import urllib # We're fetching from the web
+ import xml.dom.minidom as minidom # Using minidom for XML parsing</pre>
+<p>Then, we download the file we're interested in. LiveJournal's RSS feeds are stored at <code>http://www.livejournal.com/users/exampleusername/data/rss</code>. This hack can also work on any site that uses LiveJournal's mood and music elements in their RSS feeds, but this is not done by any currently available software, so LiveJournal probably provides the most interesting dataset.</p>
+<pre>
+ u = urllib.urlopen(&quot;<a href="http://www.livejournal.com/users/crschmidt/data/rss&quot">http://www.livejournal.com/users/crschmidt/data/rss&quot</a>;)
+ xmldata = u.read()
+ u.close()</pre>
+<p>Now, we have a string with the XML data, <code>xmldata</code>. The next step is to parse the data into an XML data structure we can use minidom against.</p>
+<pre>
+ xmldoc = minidom.parseString(xmldata)</pre>
+<p>This document is now an instance of a minidom document, which we can search through for the elements we wish to find. Next, we set up a data structure to store the resulting data, and then begin our loop over the data:
+</p>
+<pre>
+
+ metadata = {}
+ for i in xmldoc.getElementsByTagName(&quot;item&quot;):
+    link = &quot;&quot;; music = &quot;&quot;; mood = &quot;&quot;; date = &quot;&quot;</pre>
+<p>You can see that we have reset each of the variables at the beginning of the loop. Next, we deal with the item XML: <code>i</code> is our RSS item, which we can use the DOM methods against.</p>
+<pre>
+    link = i.getElementsByTagName(&quot;link&quot;)[0].firstChild.nodeValue
+    date = i.getElementsByTagName(&quot;pubDate&quot;)[0].firstChild.nodeValue
+    music = i.getElementsByTagName(&quot;lj:music&quot;)
+    mood = i.getElementsByTagName(&quot;lj:mood&quot;)</pre>
+<p>You can see that this code segment assumes that both <code>link</code> and <code>pubDate</code> tags are included in the RSS feed. This is always the case in LiveJournal's RSS 2.0 feeds, but not always the case in other feeds. If you are adapting this hack to another data source, you will need to modify the above lines for <code>link</code> and <code>pubDate</code> to instead perform the same logic as <code>lj:music</code> and <code>lj:mood</code> do. This logic ensures first that these elements exist before retrieving their value.</p>
+<pre>
+    if len(music):
+        musictext = music[0].firstChild.nodeValue
+    if len(mood):
+        moodtext = mood[0].firstChild.nodeValue</pre>
+<p>Lastly, we store this data in a Python <code>dict</code> structure, keyed on the <code>link</code> value. The reason for this choice is that it allows us to combine this data source with other results: the key combination allows us to ensure that each item is stored only once.</p>
+<pre>
+    metadata[link] = { 'music': musictext, 'mood': moodtext, 'date': date }</pre>
+<p>Once we have looped over the entire dataset, we have a data structure with date and link for each entry, and mood and music metadata if it is available.</p>
+<p>
+</p>
+<h2><a name="the_complete_listing">The Complete Listing</a></h2>
+<p>A&lt;ljmetadata&gt; shows the complete listing.</p>
+<p>
+</p>
+<h2><a name="hacking_the_hack">Hacking the Hack</a></h2>
+<p>This script is designed to be used as a starting point for a number of other hacks. The metadata data structure can be used in almost any way imaginable. It can be used to interact with other Python applications or stored into a local file or database for further extension. It can be converted to <code>JSON</code> using the py-json library, and communicated to a Javascript application. It can be built upon in any number of ways to create a more advanced hack.
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Creating a Feed From A Subversion Repository</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#creating_a_feed_from_a_subversion_repository">Creating a Feed From A Subversion Repository</a></li>
+	<ul>
+
+		<li><a href="#learning_subversion_output">Learning Subversion Output</a></li>
+		<li><a href="#writing_the_regex">Writing the Regex</a></li>
+		<li><a href="#building_the_feed">Building the Feed</a></li>
+		<li><a href="#extending_the_hack">Extending the Hack</a></li>
+		<ul>
+
+			<li><a href="#turning_it_into_a_cgi">Turning it into a CGI</a></li>
+		</ul>
+
+		<li><a href="#the_complete_listing">The Complete Listing</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="creating_a_feed_from_a_subversion_repository">Creating a Feed From A Subversion Repository</a></h1>
+<p>Many projects store code, documentation, or other resources in some kind of version control repository. In many cases, notifications of changes are sent via email to a mailing list, or are delivered through some other mechanism. An RSS feed can provide a simple solution to getting the data on when the source changes, and how, fitting better into your existing workflow.</p>
+<p>One of the more popular revision control systems of late is Subversion, the ``compelling replacement for CVS''. This hack will show you how a simple combination of scripting can create RSS output from your Subversion repository. Install it as a CGI script and have an always-up-to-date feed, or run it via cron to create a static file. Either way, you can integrate the RSS output from your version control system into your workflow, taking advantage of the benefits that RSS offers.</p>
+<p>
+</p>
+<h2><a name="learning_subversion_output">Learning Subversion Output</a></h2>
+<p>Subversion provides a simple, repository-level log of changes via the <code>svn(1)</code> commandline utility. The command for this functionality is <code>svn log</code>. All svn commands are documented via the <code>svn help &lt;command</code>&gt; feature: in this case, documentation is available via <code>svn help log</code>. From there, we learn that the log has a more verbose setting, by passing in the -v option. This has the affect of including the names of changed files in the log report, which will be useful for us in our feed.</p>
+<p>To see what this log output looks like, we'll look at the changes made in the past week to the Wordpress subversion repository. Unfortunately, Subversion offers no way to limit the number of results, to a given number, so revisions must be selected by date. To select the date from one week ago, we'll use a bit of shell scripting:</p>
+<p>date -r $(($(date ``+%s'')-604800)) ``+%Y-%m-%d''</p>
+<p>The inner date gives us time in seconds since epoch, from which we subtract 604,800 seconds, or one week. Then, we pass this to date again as a base time, retrieving the Year-Month-Day format for the time given. Once we've done this, we can pass this into Subversion, retrieving the log entries from the most recent revision, known as HEAD, to one week ago: 
+</p>
+<pre>
+
+   svn log -v -r HEAD:&quot;{`date -r $(($(date &quot;+%s&quot;)-604800)) &quot;+%Y-%m-%d&quot;`}&quot; <a href="http://svn.automattic.com/wordpress/trunk/">http://svn.automattic.com/wordpress/trunk/</a></pre>
+<p>You'll see a number of results, all similar in formatting to:</p>
+<pre>
+ ------------------------------------------------------------------------
+ r2822 | ryan | 2005-08-30 00:07:12 -0400 (Tue, 30 Aug 2005) | 1 line
+ Changed paths:
+    M /trunk/wp-includes/functions.php
+ 
+ url_to_postid() typo fix.  Props markjaquith.  fixes #1612
+ ------------------------------------------------------------------------</pre>
+<p>There are several distinct useful parts to this log entry.</p>
+<ul>
+<li><strong><a name="item_the_revision_number_2e_a_repository_2dglobal_uniqu">The revision number. A repository-global unique identifier for this change.</a></strong><br />
+</li>
+<li><strong><a name="item_username_of_the_user_who_committed_to_change_2e">Username of the user who committed to change.</a></strong><br />
+</li>
+<li><strong><a name="item_date_and_time_of_change_2e">Date and time of change.</a></strong><br />
+</li>
+<li><strong><a name="item_number_of_lines_in_commit_message">Number of lines in commit message</a></strong><br />
+</li>
+<li><strong><a name="item_files_which_have_changed_2c_including_an_indicator">Files which have changed, including an indicator of what kind of change it was. In this case, the type of change was ``M'', for modification. Other commonly seen indicators are A, for add, and D for delete.</a></strong><br />
+</li>
+<li><strong><a name="item_the_commit_message_itself_2e">The commit message itself.</a></strong><br />
+</li>
+</ul>
+<p>We will want to use each of these in a different way in our feed. Since the format of this log entry never changes, we can use a relatively simple regex system to extract the pieces of information we're interested in, building an RSS item  for each of the items in the log.</p>
+<p>
+</p>
+<h2><a name="writing_the_regex">Writing the Regex</a></h2>
+<p>The simplest way to seperate out all the data from the Subversion log entries is via a regular expression. Perl is a language ideally suited for working with this problem, given its origins in text manipulation. We'll build the regex similarly to how the actual text is delivered to us, for readability:</p>
+<pre>
+  -*
+  r(\d+) \| (\w+) \| (.+) \((.+)\) \| (\d*) line(s?)$
+  Changed paths:
+  (.*)$
+  (.*)
+  -*$</pre>
+<p>As you can see here, we have a regex where most of the work is in the first line, and then we capture the changed paths, and the commit message. With this information, we can build up an RSS entry from the pieces we've extracted:</p>
+<pre>
+  &lt;item&gt;
+    &lt;title&gt;Revision $1, Committed by $2&lt;/title&gt;
+    &lt;description&gt;$8
+      Changed paths:
+      $7
+    &lt;/description&gt;
+    &lt;dc:creator&gt;$2&lt;/dc:creator&gt;
+  &lt;/item&gt;</pre>
+<p>From our earlier example log message, this will create:</p>
+<pre>
+  &lt;item&gt;
+    &lt;title&gt;Revision 2822, from ryan&lt;/title&gt;
+    &lt;description&gt;url_to_postid() typo fix.  Props markjaquith.  fixes #1612
+      Changed Paths:
+      M /trunk/wp-includes/functions.php
+    &lt;/description&gt;
+    &lt;dc:creator&gt;ryan&lt;/dc:creator&gt;
+  &lt;/item&gt;</pre>
+<p>
+</p>
+<h2><a name="building_the_feed">Building the Feed</a></h2>
+<p>So, we now have a way to build our entries. But so far, we haven't built the actual RSS feed that goes with those entries. In the process, we'll show the guts of the Perl script which is going to help us out in creating this feed.</p>
+<p>First, we'll find the time frame we want to look at: in this case, I'm going to create a feed which contains a week of log entries. We'll use Perl's builtin time function to get the current number of seconds since epoch time, then find the time we want to start from by subtracting time from there:
+</p>
+<pre>
+
+    use Date::Format;
+    $date = time;
+    $date = $date - 60 * 60 * 24 * 7; # one week
+    $date = time2str(&quot;%Y-%m-%d&quot;, $date);</pre>
+<p>Now that we have a date to start from, we call out to the Subversion binary using Perl's equivilant of backticks, capturing the returned data to a string:</p>
+<pre>
+    $logdata = qx!svn log -v -r HEAD:&quot;{$date}&quot; <a href="http://svn.automattic.com/wordpress/trunk/">http://svn.automattic.com/wordpress/trunk/</a>!;</pre>
+<p>Now that we have our data, we can start crafting our RSS feed. First, we print an XML prolog, then begin crafting the elements which are global to the feed. Note that we are simply printing this data, so it can be redirected to a file. It would be also be possible to store it in a string as we went along, then printing that string at the end, either to standard out or to a file.</p>
+<pre>
+ print &quot;&lt;?xml version='1.0' encoding='utf-8' ?&gt;
+ &lt;rss version='2.0' xmlns:dc='<a href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a>'&gt;
+ &lt;channel&gt;
+   &lt;title&gt;Subversion Log Feed&lt;/title&gt;
+   &lt;link&gt;<a href="http://svn.automattic.com/wordpress/trunk/&lt;/link&gt">http://svn.automattic.com/wordpress/trunk/&lt;/link&gt</a>;
+   &lt;description&gt;Automatically generated RSS feed from Wordpress Subversion history.&lt;/description&gt;
+ &quot;;</pre>
+<p>Here, we've simply created a quick description of the feed for tools which support these descriptions. The title, link, and description can all be edited to suit your needs.</p>
+<p>Now, we can loop over the log entries, turning them into RSS entries.</p>
+<pre>
+  foreach my $loge (split(&quot;-&quot;x72, $string)) {
+    $loge =~ s!-*
+  r(\d+) \| (\w+) \| (.+) \((.+)\) \| (\d*) line(s?)$
+  Changed paths:
+  (.*)$
+  (.*)
+  -*$!
+  &lt;item&gt;
+    &lt;title&gt;Revision $1, Committed by $2&lt;/title&gt;
+    &lt;description&gt;$8
+      Changed paths:
+      $7
+    &lt;/description&gt;
+    &lt;dc:creator&gt;$2&lt;/dc:creator&gt;
+  &lt;/item&gt;!msg;</pre>
+<pre>
+      print $loge;
+  }</pre>
+<p>Finally, we close our feed:</p>
+<pre>
+    print &quot;&lt;/channel&gt;
+         &lt;/rss&gt;&quot;;</pre>
+<p>And we have an RSS feed.</p>
+<p>
+</p>
+<h2><a name="extending_the_hack">Extending the Hack</a></h2>
+<p>Some extensions to this hack might include obtaining a diff for each revision, and including this in the feed as well as the log message. This would let readers see how much had actually changed, something that the current hack doesn't let you do. One simple extension would be to convert the script to run as a CGI script on a webserver, which we will demonstrate here.</p>
+<p>
+</p>
+<h3><a name="turning_it_into_a_cgi">Turning it into a CGI</a></h3>
+<p>In order to turn the script into a CGI script, we must include headers to be delivered before any content is delivered. In the complete program listing below, we can see that our first line is ``use Date::Format;''. If, before this, we add the lines:
+</p>
+<pre>
+
+  #!/usr/bin/perl   
+  print &quot;Content-Type: text/xml\r\n\r\n&quot;;</pre>
+<p>The script will drop in place as a .cgi file. Note that heavy load on this script may place significant load on your Subversion server, however: it may be beneficial to run the script under cron to regularly create a static file rather than dynamically generating the content on demand.</p>
+<p>
+</p>
+<h2><a name="the_complete_listing">The Complete Listing</a></h2>
+<p>A&lt;svnrss&gt; shows the complete code listing.</p>
+
+</body>
+
+</html>

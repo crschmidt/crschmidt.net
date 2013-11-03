@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>del.icio.us Links</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#del_icio_us_links">del.icio.us Links</a></li>
+	<ul>
+
+		<li><a href="#installing_magpierss">Installing MagpieRSS</a></li>
+		<li><a href="#parsing_del_icio_us_rss">Parsing del.icio.us RSS</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="del_icio_us_links">del.icio.us Links</a></h1>
+<p>del.icio.us is the fabulous social bookmarking site which allows you to add tags and descriptions to your bookmarks, and share them with others. It provides an RSS feed for each user and each tag, and these RSS feeds allow you to mirror content from del.icio.us onto your website with ease. The MagpieRSS library provides a simple interface for parsing and displaying information from these feeds in PHP.</p>
+<p>This hack is very similar to the ``Adding RSS Content to Your Homepage'' hack. The main difference is that we will create a display that is tailored specifically to del.icio.us RSS feeds, which provide several sets of additional information not provided by most RSS feeds.</p>
+<p>
+</p>
+<h2><a name="installing_magpierss">Installing MagpieRSS</a></h2>
+<p>First step to this hack is to download MagpieRSS from the MagpieRSS homepage, <a href="http://magpierss.sourceforge.net/">http://magpierss.sourceforge.net/</a>. Once you've downloaded the latest release from Sourceforge, you will need to create a directory in your webroot to store the include files that MagpieRSS needs. The documentation suggests a ``magpierss'' directory.</p>
+<p>Once you've created this directory, copy the four include files (rss_fetch.inc, rss_parser.inc, rss_cache.inc, and rss_utils.inc), and the directory extlib (which contains a modified version of the Snoopy HTTP client) into the directory.</p>
+<p>That's it. You've installed the MagpieRSS library.</p>
+<p>
+</p>
+<h2><a name="parsing_del_icio_us_rss">Parsing del.icio.us RSS</a></h2>
+<p>To parse del.icio.us RSS, we will use the fetch_rss method provided by MagpieRSS. First, we include the two include files we will need: one for parsing the RSS, the second for converting the date fields to a timestamp.</p>
+<pre>
+   require_once('magpierss/rss_fetch.inc');
+   require_once('magpierss/rss_utils.inc');</pre>
+<p>Then, we fetch the RSS file:</p>
+<pre>
+    $rss = fetch_rss(&quot;<a href="http://del.icio.us/rss/crschmidt&quot">http://del.icio.us/rss/crschmidt&quot</a>;);</pre>
+<p>Once we've done this, we can iterate over the entries, the same way we would with any other RSS feed. However, there are several additional items which are available in del.icio.us feeds which aren't available in most other RSS feeds:</p>
+<ul>
+<li><strong><a name="item_dc_3adate__2d_2d_the_w3c_date_time_format_timestam">dc:date -- The W3C Date Time Format timestamp of the item. We can use this to print the time an item was posted.</a></strong><br />
+</li>
+<li><strong><a name="item_dc_3asubject__2d_2d_a_space_seperated_list_of_tags">dc:subject -- a space seperated list of tags that are attached to the item</a></strong><br />
+</li>
+</ul>
+<p>Much of the rage behind del.icio.us has been its tagging system: allowing people to gather links with similar content by assigning the same subject to them. Using the dc:subject, we can show these links alongside our entries, so that people can browse to other links that might be considered similar.</p>
+<p>To demonstrate this, we'll create a list of links from del.icio.us, each followed by a list of links to each tag, with the date each was posted.</p>
+<pre>
+    foreach ($rss-&gt;items as $item) { 
+        $tags = explode(&quot; &quot;, $item['dc']['subject']);
+        $time = parse_w3cdtf($item['dc']['date']);
+        $date = date(&quot;Y-m-d&quot;, $time);
+        echo &quot;&lt;li&gt;&lt;a href='&quot;.$item['link'].&quot;'&gt;&quot;.$item['title'].&quot;&lt;/a&gt;, posted $date&lt;br /&gt;&quot; . 
+             &quot;.$item['description'].&quot;&lt;br /&gt;&quot;;
+        if (is_array($tags)) foreach($tags as $v)
+            echo &quot;&lt;a href='<a href="http://del.icio.us/tag/">http://del.icio.us/tag/</a>$v'&gt;$v&lt;/a&gt; &quot;;
+        echo &quot;&lt;/li&gt;&quot;;
+    }</pre>
+<p>First, we split up the tags: the <code>explode</code> call splits the subject up by spaces, creating an array of the tags used on the post. We then parse the date, and create a date string in the same format that del.icio.us itself uses. For more information on how to change the date format, refer to the documentation for PHP's <code>date</code> function.</p>
+<p>We then print out The link, title, date, and description. Finally, we iterate over the tags, making each tag a link to the del.icio.us page for that tag -- this allows people to find other similar links if they are interested.</p>
+<p>As you can see, it is relatively simple to build up a clean display similar to del.icio.us's own display with minimal effort, based on the RSS feed provided by del.icio.us.</p>
+
+</body>
+
+</html>

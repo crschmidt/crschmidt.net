@@ -1,0 +1,109 @@
+Christopher Schmidt 
+236 Allston St.
+Cambridge, MA 02139
+617-595-3481
+crschmidt@crschmidt.net
+
+Employment History:
+
+Software Engineer
+Nokia                                                   April 2010-Present
+Work with Search Quality team to evaluate and improve quality of Local Search.
+Developed and maintained a tool for accepting work from primarily unskilled
+workers to assist in the development of quality evaluation, and helped to 
+develop and present evaluation of search quality through this manually 
+annotated data. Manage a team of 5 working on extracting user interactions
+for analysis and search quality improvement, using 'big data' tools (like 
+Hadoop) to analyze logs from a service with over 2 million daily users.
+Work to build a system for improved integration of place data for 
+tens of millions of places from dozens of different providers, integrating
+user generated content with basic and rich content to provide a better
+user experience.
+
+Software Developer
+MetaCarta                                               June 2006-April 2010
+Work with the CTO to create compelling and interesting demonstrations of 
+MetaCarta's geographic search and geographic document tagging technologies.
+Developed an on-demand local search and document tagging service to support
+active usage via the web and helped develop and create web service APIs to 
+provide better access for customers attempting to use the MetaCarta APIs.
+Participated in the development of three separate open source projects from
+the ground up: OpenLayers, TileCache, and FeatureServer, each of which is now
+a fully community-run open source project under OSGeo. 
+
+Developer
+Ning                                                    Sept 2005-June 2006
+Developed, updated, maintained, and improved core set of applications on the 
+Ning platform. Included all manner of changes, from usability improvements to
+implementation of design and functional changes in the way applications work. 
+
+Developer
+wedu                                            June 2004-July 2005
+Working in PHP to develop web sites and applications to client specifications.
+Communicating with clients to achieve proposed changes to websites, or 
+develop and create entirely new ones, using specifications developed alongside 
+the client.
+
+More history available upon request. History highlights only relevant positions.
+
+
+Open Source Experience:
+
+OpenLayers
+Project Developer, Project PSC Member               June 2006 - 2011
+Helped to found the OpenLayers project. OpenLayers is a Javascript web mapping
+library, similar to the Google Maps API, that allows users to browse maps
+on the web. OpenLayers has a development community of hundreds, with dozens
+directly contributing to the codebase, and has been used in 10s of thousands
+of web pages. In addition to helping found the project, currently serve as
+a member of the Project Steering Committee in an advisory role.
+
+TileCache
+Project Developer                                   Nov 2006 - 2011
+Maintainer and primary developer of TileCache, a library designed to allow
+simple caching and generation of tiled images for web-based mapping. Have
+supported the user and developer community in the primary developer role
+since the project's inception following FOSS4G2006.
+
+FeatureServer
+Project Developer                                   May 2007 - 2011
+Maintainer and primary developer of FeatureServer, a tool for doing simple
+presentation of web-based feature storage and editing. FeatureServer was 
+an initial attempt to demonstrate that making features available in a 
+more RESTful way was a reasonable approach to solving the problem, and has
+been used in varying efforts from demonstrating offline browser-based
+geographic data editing to efforts in helping support the relief effort
+in Haiti in January of 2010.
+
+OpenAerialMap
+Developer                                           Nov 2007 - Dec 2008
+Helped develop an initial proof-of-concept for the OpenAerialMap project,
+providing a repository of free and open aerial imagery. Processed state-wide
+(and worldwide) imagery for a number of states as part of a proof of concept
+of the OpenAerialMap concept, and helped to develop software to support that
+effort.
+
+spatialreference.org
+Primary Developer and Maintainer                   July 2007 - Present
+Spatialreference.org is a website dedicated to making available spatial
+reference information to users. In addition to supporting the common, existing
+dictionaries for spatial reference definitions, spatialreference.org also 
+supports addition of user-provided spatial references, helping to
+build up a common location for spatial reference definitions of all kinds.
+
+Other Experience:
+
+Open Source Geospatial Foundation Board Member      Nov 2009 - 2011
+Participate in discussions about the direction and tasks for the Open Source
+Geospatial Foundation, including helping to direct the foundation with regard
+to allocation of resources, seeking sponsorships from various companies, and
+other similar work supporting the non-profit foundation.
+
+OSGeo Foundation Systems Administration Committee     Nov 2009 - Present
+Help to maintain the OSGeo server infrastructure, including shared 
+SVN, Trac, and web services. Helped to move OSGeo from dated, expensive
+infrastructure to infrastructure provided by OSUOSL to support higher
+load due to increased usage. Primary point of contact for several high
+visibility infrastructure componenets.
+
+References available upon request.

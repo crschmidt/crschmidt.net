@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Receive RSS Updates Via IRC</title>
+<link rev="made" href="mailto:root@b28.apple.com" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#receive_rss_updates_via_irc">Receive RSS Updates Via IRC</a></li>
+	<ul>
+
+		<li><a href="#getting_the_code">Getting the Code</a></li>
+		<li><a href="#learning_ircbot_py">Learning ircbot.py</a></li>
+		<li><a href="#writing_the_rss_code">Writing the RSS Code</a></li>
+		<li><a href="#integrating_with_the_bot">Integrating With the Bot</a></li>
+		<li><a href="#extending_the_hack">Extending the Hack</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="receive_rss_updates_via_irc">Receive RSS Updates Via IRC</a></h1>
+<p>Most everywhere a hacker goes, she'll have trusty access to a shell with her. For that reason, IRC is a communication method that is popular among these users, in large part due to its extremely cross-platform client base, compared to most other communication protocols. With that in mind, IRC has become a haven for small tools to integrate into daily life, everything from reminder bots to message passing bots to weather lookups. For many users, IRC becomes an extension of the shell, a tool to be used to store and pass along information.</p>
+<p>With this in mind, it is easy to see why it might be beneficial to have RSS updates dropped into an IRC channel. Given that for many users use IRC as their always-on communication method, critical RSS updates passed into IRC fits right into the workflow for these users. With this hack, we'll show how to use Mark Pilgrim's Universal Feedparser package, along with a simple IRC framework, ircbot.py, from Sean B. Palmer to create an IRC bot that will deliver the latest news right to any channel you have the bot sit in.</p>
+<p>
+</p>
+<h2><a name="getting_the_code">Getting the Code</a></h2>
+<p>Mark Pilgrim's Universal Feed Parser is available from <a href="http://feedparser.org/">http://feedparser.org/</a>. This library is a well-maintained, well tested Python module for parsing all the types of feeds in the wild today. The module is entirely contained in a single file, and the latest version can be downloaded from the website. Once you've downloaded the Feedparser code, create a directory to contain your bot, and place the <code>feedparser.py</code> file into this directory.</p>
+<p>Next, we'll download Sean B. Palmer's ircbot.py framework and place it in the same directory. Again, this is a simple, one-file Python program which acts as an IRC bot, available from <a href="http://inamidst.com/phenny/ircbot.py">http://inamidst.com/phenny/ircbot.py</a>. This Python-based bot framework is easily extended in a number of different ways, making it an ideal starting base for many simple projects. Once you've done this, we can get to work with building the code which will display our updates for us.</p>
+<p>
+</p>
+<h2><a name="learning_ircbot_py">Learning ircbot.py</a></h2>
+<p>Once we have both these files in place, we will learn a little bit about how the IRC framework we're using works. Most IRC bots respond to specific ``trigger'' words or phrases from users. ircbot.py is built around the idea of triggers as starting points for functions: at the end of the ircbot.py code we see function definitions, and rule bindings which match these function definitions to certain regular expressions. We will use a binding like this to start our bot fetching RSS, after which it will continue automatically until the bot dies.</p>
+<p>You can see based on the examples, that the way to pass messages is via the <code>bot.msg</code> function call, which will send a message given the sender of the original message - this automatically determines whether the message is in a channel or private message, and includes rate limiting to prevent it from being automatically kicked off a server.</p>
+<p>Additionally, the bot has a <code>bot.todo</code> method, which can be used to pass direct IRC commands: the <code>bye</code> function in the example bot demonstrates how to use this, by directly sending information for a server command. Note that you will need to consult IRC documentation for information about what these commands require: ircbot.py is a simplistic framework designed around message passing and does not typically offer support for all the intricacies of the IRC protocol.</p>
+<p>
+</p>
+<h2><a name="writing_the_rss_code">Writing the RSS Code</a></h2>
+<p>Now that we have a vague idea about how the IRC framework we're using works, we can write the code which will actually scan the RSS and pass the messages along. The first step is to initialize a set of variables we're going to be using repeatedly, which we don't want to go out of scope when the loop ends:</p>
+<pre>
+    def run_rss(bot, origin):
+      import feedparser  # our RSS module
+      import time        # for time.sleep
+      etag = &quot;&quot;          # For conditional get
+      lm = &quot;&quot;
+      seen = []          # List for URLs already seen
+      url = &quot;<a href="http://crschmidt.net/blog/feed/rdf&quot">http://crschmidt.net/blog/feed/rdf&quot</a>;  # URI for our feed</pre>
+<p>Now that we have our variables defined, we can build the infinite loop that will be controlling our output. We first initialize a count variable, so that we don't send several dozen entries to the IRC server all at once when we first get them. (This would cause problems with flooding.) We then parse the feed, using feedparser, and store our conditional get information into the variables we previously defined. Note that we are sending in the variables on our first fetch of the feed as well: however, since they are simply empty strings, they will not prevent us from fetching the data.</p>
+<pre>
+      while(1):
+        count = 0
+        feed = feedparser.parse(url, etag=etag, modified=lm)
+        if feed.has_key('etag'):
+           etag = feed.etag
+        if feed.has_key('modified'):
+           lm = feed.modified</pre>
+<p>Our feed data is now available in <code>feed</code>, as we demonstrated by setting the modified and etag variables from this data. The data contains an array of entries in the <code>entries</code> variable, which we will iterate over:</p>
+<pre>
+        for entry in feed.entries:
+          if not entry.link in seen:  # Have I seen you before?
+            if count &lt; 5:
+              bot.msg(origin.sender, 
+                      u&quot;%s %s&quot; % (entry.link, entry.title))
+              count += 1
+            if count == 5:
+              bot.msg(origin.sender, 
+                      &quot;Maximum count reached. More entries available.&quot;)
+              count += 1
+            seen.append(entry.link)
+        time.sleep(1800)</pre>
+<p>Nothing complex: a simple link and title element is sent to the original sender, either the channel the command was originally issued in, or in a private message, if that's how the command was originally sent. You can see that at the end of the loop, we have a sleep command, to tell the loop to pause for 1800 seconds, or 30 minutes. Depending on the server you are talking to, you may wish to increase this time to something longer, or decrease it, if the feed is updated more frequently. Note that many servers may take precautions against clients which refresh feeds too quickly.</p>
+<p>
+</p>
+<h2><a name="integrating_with_the_bot">Integrating With the Bot</a></h2>
+<p>Now that we have a function which can perform our RSS updates, we'll demonstrate how to include this code in the bot. We'll assume that we include this function as a top-level function in the ircbot.py code for this example. At the end of ircbot.py, there is a <code>bot.run</code> call, which starts the main IRC loop. Directly above that, we will add the definition for our <code>rss</code> function, which will start our RSS loop in a seperate thread, so the bot can continue to interact with the IRC server.d</p>
+<pre>
+    def rss(m, origin, args, text, bot=bot):
+        import threading
+        t = threading.thread(target=run_rss, args=[bot, origin])
+        t.setDaemon(1)
+        t.start()
+    bot.rule(rss, 'rss', r'\.start')
+    bot.rule(rss, 'rss', r'%s: start' % bot.nick)</pre>
+<pre>
+    bot.run(host, port)</pre>
+<p>As you can see here, we've included two rules which control the bot: one is when the bot is addressed, and the other is when the text ``.start'' is issued. In both cases, the bot will start a background thread, passing the bot instance (for message passing) and the origin, so that the original sender can be determined in the <code>run_rss</code> function.</p>
+<p>Once we've done this, we can add the run_rss function definition: this can fit immediately below the Bot class. To change the channels that the bot will join by default, simply edit the <code>test</code> function call, a la:</p>
+<pre>
+   test('irc.freenode.net', 6667, ['#d8uv.com', '#synhacks'])</pre>
+<p>That's it. Your bot will now run, jump, and play for you, passing on message from an RSS feed as it sees fit.</p>
+<p>
+</p>
+<h2><a name="extending_the_hack">Extending the Hack</a></h2>
+<p>One extension to this hack would be to allow for users to add their own RSS feeds, rather than having the feed be defined by the code itself. This is not that difficult: because rules in ircbot.py are regular expressions, we can allow users to choose a URL in their message to the bot to start:</p>
+<pre>
+    def rss(m, origin, args, text, bot=bot):
+        url = m.group(1)
+        t = threading.thread(target=run_rss, args=[bot, origin, url])
+        t.setDaemon(1)
+        t.start()
+    bot.rule(rss, 'rss', r'\.start (.*)$')</pre>
+<p>This would require an equally modest edit to the run_rss code:
+</p>
+<pre>
+
+    def run_rss(bot, origin, url):</pre>
+<p>once this is complete, simply remove the line which sets the URL from this code, and your run_rss function will work against the provided URL rather than one provided by the code. Note that this may be used by malicious users as an attack against a website, however: because the bot does no checking of whether already-running threads are visiting the RSS URL, it would be possible to initiate a significant number of hits by running the same command repeatedly.
+</p>
+
+</body>
+
+</html>

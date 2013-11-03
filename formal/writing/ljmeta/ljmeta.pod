@@ -1,0 +1,102 @@
+=head1 Find Current Mood and Music of LiveJournal Users
+
+One of the primary benefits of XML and RSS is that it is extensible to include information not originally designed for inclusion in RSS. The use of a seperate namespace to store original data is taken advantage of in a number of ways, and using this extended data, it is possible to obtain some interesting information from RSS feeds. One example of this is LiveJournal's RSS feeds, which include music and mood metadata in an extension namespace.
+
+LiveJournal has a number of site-specific metadata keys attached to every post: categories, stored as tags, music and mood. Depending on how the metadata is stored by the user, this information may be extremely useful, or may simply be blank or not included. Recently, LiveJournal began exporting this information in their RSS feeds. This allows for external tools to extract this data and work with it in a way that was not possible in the past.
+
+Oftentimes, this information on a short term basis is not all that interesting: moods over the 25 posts included in RSS don't tend to be all that interesting. However, it is possible to aggregate this information across an entire group of people on LiveJournal, and building up these aggregate statistics can prove to display interesting effects. One project, called MoodGrapher (L<http://ilps.science.uva.nl/cgi-bin/livejournal/mood>) seeks to establish general trends in LiveJournal moods using this data. An example output is shown in the analysis of the mood of LiveJournal users after the London bombing (L<http://ilps.science.uva.nl/moodgrapher/london.html>).
+
+Rather than analyze moods on a global or sitewide scale, it is possible to analyze a specific user or group of users. This may show localized trends, or it may show trends over time in how a user feels at a specific time of day. 
+
+In addition to the mood metadata, music metadata is exported. This allows for a number of hacks: for example, when an RSS feed updates, the latest music could be opened in the iTunes Music Store for purchase, or your library could be searched for whether you have the song or not. 
+
+This hack is designed to act as a building block for further expansion using metadata from LiveJournal RSS feeds. It will download the most recent RSS feed for a user, then return a data structure with the associated metadata. This metadata can then be manipulated for any number of other hacks.
+
+=head2 How It Works
+
+Additional metadata in RSS is typically associated with an extension namespace. In the case of LiveJournal's mood and music metadata, this namespace is one specific to LiveJournal, C<http://www.livejournal.org/rss/lj/1.0/>. If you download a LiveJournal RSS file, you will see two up to two additional elements inside each <item>:  <lj:mood> and <lj:music>. These tags contain text strings assigned by the authors of the post. 
+
+LiveJournal's RSS feeds are provided in RSS 2.0. Since we're only looking at parsing the data out of this particular type of feed, doing so is relatively simple. However, note that using this technique, most RSS feeds, including versions in the 1.0 and 2.0 branch.
+
+This hack is written in Python, and uses the minidom module to parse XML. This module is included by default in Python versions greater than 2.1. As such, it should be included on any modern system.
+
+First, we import the modules we want to use.
+
+ import urllib # We're fetching from the web
+ import xml.dom.minidom as minidom # Using minidom for XML parsing
+
+Then, we download the file we're interested in. LiveJournal's RSS feeds are stored at C<http://www.livejournal.com/users/exampleusername/data/rss>. This hack can also work on any site that uses LiveJournal's mood and music elements in their RSS feeds, but this is not done by any currently available software, so LiveJournal probably provides the most interesting dataset.
+
+ u = urllib.urlopen("http://www.livejournal.com/users/crschmidt/data/rss")
+ xmldata = u.read()
+ u.close()
+
+Now, we have a string with the XML data, C<xmldata>. The next step is to parse the data into an XML data structure we can use minidom against.
+
+ xmldoc = minidom.parseString(xmldata)
+
+This document is now an instance of a minidom document, which we can search through for the elements we wish to find. Next, we set up a data structure to store the resulting data, and then begin our loop over the data:
+  
+ metadata = {}
+ for i in xmldoc.getElementsByTagName("item"):
+    link = ""; music = ""; mood = ""; date = ""
+
+You can see that we have reset each of the variables at the beginning of the loop. Next, we deal with the item XML: C<i> is our RSS item, which we can use the DOM methods against.
+
+    link = i.getElementsByTagName("link")[0].firstChild.nodeValue
+    date = i.getElementsByTagName("pubDate")[0].firstChild.nodeValue
+    music = i.getElementsByTagName("lj:music")
+    mood = i.getElementsByTagName("lj:mood")
+
+You can see that this code segment assumes that both C<link> and C<pubDate> tags are included in the RSS feed. This is always the case in LiveJournal's RSS 2.0 feeds, but not always the case in other feeds. If you are adapting this hack to another data source, you will need to modify the above lines for C<link> and C<pubDate> to instead perform the same logic as C<lj:music> and C<lj:mood> do. This logic ensures first that these elements exist before retrieving their value.
+
+    if len(music):
+        musictext = music[0].firstChild.nodeValue
+    if len(mood):
+        moodtext = mood[0].firstChild.nodeValue
+
+Lastly, we store this data in a Python C<dict> structure, keyed on the C<link> value. The reason for this choice is that it allows us to combine this data source with other results: the key combination allows us to ensure that each item is stored only once.
+
+    metadata[link] = { 'music': musictext, 'mood': moodtext, 'date': date }
+
+Once we have looped over the entire dataset, we have a data structure with date and link for each entry, and mood and music metadata if it is available.
+
+=head2 The Complete Listing
+
+A<ljmetadata> shows the complete listing
+
+=begin listing Retrieving Metadata from LiveJournal RSS Feeds
+Z<metadata>
+
+#!/usr/bin/python
+ 
+import urllib
+import xml.dom.minidom as minidom
+
+u = urllib.urlopen("http://www.livejournal.com/users/crschmidt/data/rss")
+xmldata = u.read()
+u.close()
+
+xmldoc = minidom.parseString(xmldata)
+
+metadata = {}
+
+for i in xmldoc.getElementsByTagName("item"):
+   link = ""; musictext = ""; moodtext = ""; date = ""
+   link = i.getElementsByTagName("link")[0].firstChild.nodeValue
+   date = i.getElementsByTagName("pubDate")[0].firstChild.nodeValue
+   music = i.getElementsByTagName("lj:music")
+   mood = i.getElementsByTagName("lj:mood")
+   if len(music):
+       musictext = music[0].firstChild.nodeValue
+   if len(mood):
+       moodtext = mood[0].firstChild.nodeValue
+   metadata[link] = { 'music': musictext, 'mood': moodtext, 'date': date }
+
+print metadata
+
+=end listing
+
+=head2 Hacking the Hack
+
+This script is designed to be used as a starting point for a number of other hacks. The metadata data structure can be used in almost any way imaginable. It can be used to interact with other Python applications or stored into a local file or database for further extension. It can be converted to C<JSON> using the py-json library, and communicated to a Javascript application. It can be built upon in any number of ways to create a more advanced hack.

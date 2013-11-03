@@ -1,0 +1,16 @@
+import RDF
+
+model = RDF.Model()
+
+subject = RDF.Uri("isbn:0-81255075-7")
+predicate = RDF.Uri("http://purl.org/dc/elements/1.1/title")
+object = RDF.Node("Speaker for the Dead")
+
+statement = RDF.Statement(subject, predicate, object)
+
+model.append(statement)
+
+statement = RDF.Statement(subject, None, None)
+bookdata = model.find_statements(statement)
+for fact in bookdata:
+    print fact

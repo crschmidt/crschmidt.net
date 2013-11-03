@@ -1,0 +1,48 @@
+import RDF
+
+model = RDF.Model()
+
+subject = RDF.Uri("isbn:0-81255075-7")
+predicate = RDF.Uri("http://purl.org/dc/elements/1.1/title")
+object = RDF.Node("Speaker for the Dead")
+
+statement = RDF.Statement(subject, predicate, object)
+
+model.append(statement)
+
+statement = RDF.Statement(subject, None, None)
+bookdata = model.find_statements(statement)
+subject = RDF.Uri("http://purl.org/dc/elements/1.1/title")
+predicate = RDF.Uri("http://example.org/bookap/appdata#displayedName")
+object = RDF.Node("Book Title")
+statement = RDF.Statement(subject, predicate, object)
+model.append(statement)
+subject = RDF.Node()
+predicate = RDF.Uri("http://purl.org/dc/elements/1.1/title")
+object = RDF.Node("Tor Books")
+statement = RDF.Statement(subject, predicate, object)
+model.append(statement)
+predicate = RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+object = RDF.Uri("http://example.org/bookap/appdata#Publisher")
+statement = RDF.Statement(subject, predicate, object)
+model.append(statement)
+
+book = RDF.Uri("isbn:0-81255075-7")
+predicate = RDF.Uri("http://purl.org/dc/elements/1.1/publisher")
+statement = RDF.Statement(book, predicate, subject)
+model.append(statement)
+for fact in bookdata:
+    print fact
+statement = RDF.Statement(None, 
+                          RDF.Uri("http://purl.org/dc/elements/1.1/title"), 
+                          RDF.Node("Tor Books"))
+pubdata = model.find_statements(statement)
+pubnode = None
+for fact in pubdata:
+    pubnode = fact.subject
+    break
+
+statement = RDF.Statement(pubnode, None, None)
+pubdata = model.find_statements(statement)
+for fact in pubdata:
+    print fact

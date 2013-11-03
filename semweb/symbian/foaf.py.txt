@@ -1,0 +1,64 @@
+import appuifw
+import thread
+import e32
+
+class Sink(list):
+    def triple(self, s, p, o):
+	self.append((s[1],p[1],o[1]))
+def import_modules(lock):
+	import ntriples
+	import urllib
+	lock.signal()
+appuifw.app.title = u'FOAF Service'
+lock = e32.Ao_lock()
+thread.start_new_thread(import_modules,(lock,))	
+url = appuifw.query(u'URL?',"text")
+service_url = "http://crschmidt.net/semweb/xml2nt.cgi?uri="
+myurl = url
+#url = "http://crschmidt.net/foaf.rdf"
+lock.wait()
+import ntriples
+import urllib
+url = "%s%s"%(service_url, url)
+print url
+mysink = Sink()
+parser = ntriples.NTriplesParser(mysink)
+u = urllib.urlopen(url)
+sink = parser.parse(u)
+u.close()
+people = {}
+creator = ""
+for triple in sink:
+	if (triple[0] == myurl and (triple[1] == "http://purl.org/dc/elements/1.1/creator" or triple[1] == "http://xmlns.com/foaf/0.1/maker") and not creator):
+		creator = triple[2]
+	if not people.has_key(triple[0]):
+		people[triple[0]] = {}
+	people[triple[0]][triple[1]] = triple[2]
+if (creator):
+	p = creator
+	if (people[p].has_key("http://www.w3.org/1999/02/22-rdf-syntax-ns#type") and (people[p]["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] == "http://xmlns.com/foaf/0.1/Person")):
+		props = {"aim": "http://xmlns.com/foaf/0.1/aimChatID", "yahoo": "http://xmlns.com/foaf/0.1/yahooChatID", "msn": "http://xmlns.com/foaf/0.1/msnChatID", "icq": "http://xmlns.com/foaf/0.1/icqChatID", "name": "http://xmlns.com/foaf/0.1/name", "nick":"http://xmlns.com/foaf/0.1/nick"}
+		if (people[p].has_key(props['name'])):
+			print "Info about the creator of this document, %s:"%(people[p][props['name']])
+		elif (people[p].has_key(props['nick'])):
+			print "Info about the creator of this document, %s:"%(people[p][props['nick']])
+		else:
+			print "Info about %s:"%(p)
+			
+		for i in props.keys():
+			if people[p].has_key(props[i]):
+				print "%s: %s"%(i,people[p][props[i]])
+else:	
+	for p in people.keys():
+		if (people[p].has_key("http://www.w3.org/1999/02/22-rdf-syntax-ns#type") and (people[p]["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] == "http://xmlns.com/foaf/0.1/Person")):
+			props = {"aim": "http://xmlns.com/foaf/0.1/aimChatID", "yahoo": "http://xmlns.com/foaf/0.1/yahooChatID", "msn": "http://xmlns.com/foaf/0.1/msnChatID", "icq": "http://xmlns.com/foaf/0.1/icqChatID", "name": "http://xmlns.com/foaf/0.1/name", "nick":"http://xmlns.com/foaf/0.1/nick"}
+			if (people[p].has_key(props['name'])):
+				print "Info about %s:"%(people[p][props['name']])
+			elif (people[p].has_key(props['nick'])):
+				print "Info about %s:"%(people[p][props['nick']])
+			else:
+				print "Info about %s:"%(p)
+				
+			for i in props.keys():
+				if people[p].has_key(props[i]):
+					print "%s: %s"%(i,people[p][props[i]])

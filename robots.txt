@@ -7,7 +7,6 @@ Disallow: /gallery2/g2data/
 Disallow: /cache/
 Disallow: /irchurch/
 Disallow: /webstats/
-Disallow: /formal/writing/
 Disallow: /server-status
 User-Agent:   NPBot (http://www.nameprotect.com/botinfo.html)
 Disallow: 

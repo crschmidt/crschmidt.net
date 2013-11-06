@@ -1,0 +1,24 @@
+import RDF
+import commands
+m = RDF.Model()
+p = RDF.Parser()
+p.parse_into_model(m,"http://crschmidt.net/library/books")
+descriptions = []
+for i in m.find_statements(RDF.Statement(None, RDF.Uri("http://purl.org/dc/elements/1.1/description"), None)):
+    descriptions.append(i)
+
+for i in descriptions:
+    rtf = i.object.literal_value['string']
+    del m[i]
+    #print rtf
+    rtf = rtf.replace('"','\\"')
+    plain = commands.getoutput('echo "%s" | ./rtfreader' % rtf)
+    m.append(RDF.Statement(i.subject, i.predicate, RDF.Node(plain[:-18])))
+s = RDF.Serializer()
+s.set_namespace("dct", "http://purl.org/dc/terms/") 
+s.set_namespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#") 
+s.set_namespace("dc", "http://purl.org/dc/elements/1.1/") 
+s.set_namespace("book", "http://www.hackcraft.net/bookrdf/vocab/0_1/") 
+s.set_namespace("del", "http://crschmidt.net/ns/delicious#") 
+s.set_namespace("foaf", "http://xmlns.com/foaf/0.1/")
+print s.serialize_model_to_string(m)

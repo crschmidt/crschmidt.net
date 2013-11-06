@@ -1,0 +1,1169 @@
+
+<!-- Processed by Id: cwm.py,v 1.164 2004/10/28 17:41:59 timbl Exp -->
+<!--     using base file:/home/crschmidt/cwm-1.0.0/books.rdf-->
+
+
+<rdf:RDF xmlns="http://crschmidt.net/ns/delicious#"
+    xmlns:book="http://www.hackcraft.net/bookrdf/vocab/0_1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:del="http://crschmidt.net/ns/delicious#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0024199214">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Macmillan Pub Co</foaf:name>
+        </publishedBy>
+        <upc>9780024199218</upc>
+        <uuid>F53C8504-D48E-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Well renowned and highly acclaimed, Ethics: Theory and Practice introduces readers with little or no background in philosophy or ethics to traditional and contemporary ethical theory using a clear, jargon-free style and a flexible organization. Discussing theories that readers can relate to their own life experiences, this Eighth Edition applies its material to various fields in the real world such as business, medicine, the environment, and the media. A host of examples and case studies illustrates for readers how to set up their own systematic, rational ethics and how to apply ethical theories to traditional and contemporary moral issues. For professionals with a career or interest in philosophy, ethics, psychology, and education.</dc:description>
+        <dc:title>Ethics: Theory and Practice</dc:title>
+        <book:authoredBy>Jacques P. Thiroux</book:authoredBy>
+        <book:isbn>0024199214</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0060959843">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>HarperResource</foaf:name>
+        </publishedBy>
+        <upc>9780060959845</upc>
+        <uuid>C1F0A554-D48E-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Whether you identify with riot grrrls or Rosie the Riveter, you'll love the tackle-it-yourself empowerment style of Dare to Repair. Covering simple tasks like unclogging bathroom sinks and switching directions on a ceiling fan along with more intimidating projects such as patching holes in drywall or creating a circuit map, this no-nonsense guide will walk you through those simple steps of maintaining, and perhaps even improving, your home. Forget about Martha and her hot-glue-gun projects--this is about drain snakes, electrical tape, and the kind of screwdrivers you can't order from a bartender.Authors Julie Sussman and Stephanie Glakas-Tenet mix goofy "Your fridge is running? Better catch it!" jokes with a very matter-of-fact tone that assumes from the start you're woman enough for the job. Sections are arranged by general category (electricity, plumbing, etc.), and every entry is accompanied by clear illustrations of items and processes. For women who live alone or are starting up a business, this is a serious money-saving guide; for those of us with roommates, there's no quicker way to impress than to whip out your toolbox and get down to business. --Jill Lightner</dc:description>
+        <dc:title>Dare to Repair : A Do-it-Herself Guide to Fixing (Almost) Anything in the Home</dc:title>
+        <book:authoredBy>Julie Sussman
+Stephanie Glakas-Tenet</book:authoredBy>
+        <book:isbn>0060959843</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C1F0A554-D48E-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0070468613">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>McGraw-Hill Companies</foaf:name>
+        </publishedBy>
+        <upc>9780070468610</upc>
+        <uuid>3214354A-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Informal Logic: Possible Worlds and Imagination</dc:title>
+        <book:authoredBy>John Eric Nolt</book:authoredBy>
+        <book:isbn>0070468613</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140188479">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Penguin Books</foaf:name>
+        </publishedBy>
+        <upc>9780140188479</upc>
+        <uuid>33B95E78-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Part travelogue, part history, part love letter on a thousand-page scale, Rebecca West's Black Lamb and Grey Falcon is a genre-bending masterwork written in elegant prose. But what makes it so unlikely to be confused with any other book of history, politics, or culture--with, in fact, any other book--is its unashamed depth of feeling: think The Decline and Fall of the Roman Empire crossed with Let Us Now Praise Famous Men. West visited Yugoslavia for the first time in 1936. What she saw there affected her so much that she had to return--partly, she writes, because it most resembled "the country I have always seen between sleeping and waking," and partly because "it was like picking up a strand of wool that would lead me out of a labyrinth in which, to my surprise, I had found myself immured." Black Lamb is the chronicle of her travels, but above all it is West following that strand of wool: through countless historical digressions; through winding narratives of battles, slavery, and assassinations; through Shakespeare and Augustine and into the very heart of human frailty.West wrote on the brink of World War II, when she was "already convinced of the inevitability of the second Anglo-German war." The resulting book is colored by that impending conflict, and by West's search for universals amid the complex particulars of Balkan history. In the end, she saw the region's doom--and our own--in a double infatuation with sacrifice, the "black lamb and grey falcon" of her title. It's the story of Abraham and Isaac without the last-minute reprieve: those who hate are all too ready to martyr the innocent in order to procure their own advantage, and the innocent themselves are all too eager to be martyred. To West, in 1941, "the whole world is a vast Kossovo, an abominable blood-logged plain." Unfortunately, little has happened since then to prove her wrong. --Mary Park</dc:description>
+        <dc:title>Black Lamb and Grey Falcon: A Journey Through Yugoslavia (Twentieth-Century Classics)</dc:title>
+        <book:authoredBy>Rebecca West</book:authoredBy>
+        <book:isbn>0140188479</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/33B95E78-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140196013">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Penguin Books</foaf:name>
+        </publishedBy>
+        <upc>9780140196016</upc>
+        <uuid>047FA0E5-D497-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>"Literacy has promoted the subjugation of women by men throughout all but the very recent history of the West," writes Leonard Shlain. "Misogyny and patriarchy rise and fall with the fortunes of the alphabetic written word."That's a pretty audacious claim, one that The Alphabet Versus the Goddess provides extensive historical and cultural correlations to support. Shlain's thesis takes readers from the evolutionary steps that distinguish the human brain from that of the primates to the development of the Internet. The very act of learning written language, he argues, exercises the human brain's left hemisphere--the half that handles linear, abstract thought--and enforces its dominance over the right hemisphere, which thinks holistically and visually. If you accept the idea that linear abstraction is a masculine trait, and that holistic visualization is feminine, the rest of the theory falls into place. The flip side is that as visual orientation returns to prominence within society through film, television, and cyberspace, the status of women increases, soon to return to the equilibrium of the earliest human cultures. Shlain wisely presents this view of history as plausible rather than definite, but whether you agree with his wide-ranging speculations or not, he provides readers eager to "understand it all" with much to consider. --Ron Hogan</dc:description>
+        <dc:title>The Alphabet Versus the Goddess: The Conflict Between Word and Image</dc:title>
+        <book:authoredBy>Leonard Shlain</book:authoredBy>
+        <book:isbn>0140196013</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/047FA0E5-D497-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140266534">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Penguin Books</foaf:name>
+        </publishedBy>
+        <upc>9780140266535</upc>
+        <uuid>A2D282AA-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The Northern Crusades</dc:title>
+        <book:authoredBy>Eric Christiansen</book:authoredBy>
+        <book:isbn>0140266534</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/A2D282AA-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140296476">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Penguin Books</foaf:name>
+        </publishedBy>
+        <upc>9780140296471</upc>
+        <uuid>BB841F1F-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>The seemingly impossible Zen task--writing a book about nothing--has a loophole: people have been chatting, learning, and even fighting about nothing for millennia. Zero: The Biography of a Dangerous Idea, by noted science writer Charles Seife, starts with the story of a modern battleship stopped dead in the water by a loose zero, then rewinds back to several hundred years BCE. Some empty-headed genius improved the traditional Eastern counting methods immeasurably by adding zero as a placeholder, which allowed the genesis of our still-used decimal system. It's all been uphill from there, but Seife is enthusiastic about his subject; his synthesis of math, history, and anthropology seduces the reader into a new fascination with the most troubling number.Why did the Church reject the use of zero? How did mystics of all stripes get bent out of shape over it? Is it true that science as we know it depends on this mysterious round digit? Zero opens up these questions and lets us explore the answers and their ramifications for our oh-so-modern lives. Seife has fun with his format, too, starting with chapter 0 and finishing with an appendix titled "Make Your Own Wormhole Time Machine." (Warning: don't get your hopes up too much.) There are enough graphs and equations to scare off serious numerophobes, but the real story is in the interactions between artists, scientists, mathematicians, religious and political leaders, and the rest of us--it seems we really do have nothing in common. --Rob Lightner</dc:description>
+        <dc:title>Zero: The Biography of a Dangerous Idea</dc:title>
+        <book:authoredBy>Matt Zimet
+Charles Seife</book:authoredBy>
+        <book:isbn>0140296476</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/BB841F1F-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140369260">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Puffin</foaf:name>
+        </publishedBy>
+        <upc>9780140369267</upc>
+        <uuid>9C4BD818-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Anne Frank : Beyond the Diary - A Photographic Remembrance</dc:title>
+        <book:authoredBy>Anna  Quindlen
+Tony  Langham
+Plym  Peters
+Rian  Verhoeven
+Ruud  Van der Rol</book:authoredBy>
+        <book:isbn>0140369260</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/9C4BD818-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0140445587">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Penguin Classics</foaf:name>
+        </publishedBy>
+        <upc>9780140445589</upc>
+        <uuid>B7B41DC8-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The Koran (Penguin Classics)</dc:title>
+        <book:authoredBy>N. J. Dawood
+Anonymous</book:authoredBy>
+        <book:isbn>0140445587</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/B7B41DC8-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a015602943X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Harvest Books</foaf:name>
+        </publishedBy>
+        <upc>9780156029438</upc>
+        <uuid>A1DC39FA-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>A dazzling novel in the most untraditional fashion, this is the remarkable story of Henry DeTamble, a dashing, adventuresome librarian who travels involuntarily through time, and Clare Abshire, an artist whose life takes a natural sequential course. Henry and Clare's passionate love affair endures across a sea of time and captures the two lovers in an impossibly romantic trap, and it is Audrey Niffenegger's cinematic storytelling that makes the novel's unconventional chronology so vibrantly triumphant.An enchanting debut and a spellbinding tale of fate and belief in the bonds of love, The Time Traveler's Wife is destined to captivate readers for years to come.</dc:description>
+        <dc:title>The Time Traveler's Wife (Harvest Book)</dc:title>
+        <book:authoredBy>Audrey Niffenegger</book:authoredBy>
+        <book:isbn>015602943X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/A1DC39FA-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0231125992">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Columbia University Press</foaf:name>
+        </publishedBy>
+        <upc>9780231125994</upc>
+        <uuid>F3165AD2-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Visions of the Crusades call up images of knights, soldiers, and priests. However, evidence suggests that many women played an active role in the actions and culture of the Crusades. Gendering the Crusades stands as the first substantial exploration of this comparatively neglected topic. Offering interdisciplinary readings of new and old sources that examine masculinity, gender roles, and historical narratives, these essays show the key roles played by women in the military, politics, and family life.</dc:description>
+        <dc:title>Gendering the Crusades</dc:title>
+        <book:authoredBy>Susan B. Edgington
+Sarah Lambert</book:authoredBy>
+        <book:isbn>0231125992</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/F3165AD2-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0316284955">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Back Bay Books</foaf:name>
+        </publishedBy>
+        <upc>9780316284950</upc>
+        <uuid>747C6A7A-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Oprah Book Club8 Selection, May 1999: Astrid Magnussen, the teenage narrator of Janet Fitch's engrossing first novel, White Oleander, has a mother who is as sharp as a new knife. An uncompromising poet, Ingrid despises weakness and self-pity, telling her daughter that they are descendants of Vikings, savages who fought fiercely to survive. And when one of Ingrid's boyfriends abandons her, she illustrates her point, killing the man with the poison of oleander flowers. This leads to a life sentence in prison, leaving Astrid to teach herself the art of survival in a string of Los Angeles foster homes.As Astrid bumps from trailer park to tract house to Hollywood bungalow, White Oleander uncoils her existential anxieties. "Who was I, really?" she asks. "I was the sole occupant of my mother's totalitarian state, my own personal history rewritten to fit the story she was telling that day. There were so many missing pieces." Fitch adroitly leads Astrid down a path of sorting out her past and identity. In the process, this girl develops a wire-tight inner strength, gains her mother's white-blonde beauty, and achieves some measure of control over their relationship. Even from prison, Ingrid tries to mold her daughter. Foiling her, Astrid learns about tenderness from one foster mother and how to stand up for herself from another. Like the weather in Los Angeles--the winds of the Santa Anas, the scorching heat--Astrid's teenage life is intense. Fitch's novel deftly displays that, and also makes Astrid's life meaningful. --Katherine Anderson</dc:description>
+        <dc:title>White Oleander : A Novel (Oprah's Book Club)</dc:title>
+        <book:authoredBy>Janet Fitch</book:authoredBy>
+        <book:isbn>0316284955</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/747C6A7A-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0316779032">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Little, Brown</foaf:name>
+        </publishedBy>
+        <upc>9780316779036</upc>
+        <uuid>26B48D0E-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>From the bestselling authors of The Baby Book and The Birth Book comes The Discipline Book, the definitive guide to raising happy, well-adjusted, well-behaved children. Seasoned parents of eight, Bill and Martha Sears draw on personal experience and their professional knowledge as childcare experts to provide an authoritative approach to a broad range of disciplinary issues and practices.With focus on preventing behavior problems as well as managing them when they arise, the Searses offer clear, practical advice on everything parents need to know about disciplining young children. Believing that discipline starts at birth, the Searses discuss baby discipline, disciplining the toddler, mother-father roles in modern parenting, saying no, self-esteem as the foundation of good behavior, helping a child to express feelings, the constructive use of anger, good nutrition for good behavior, and sleep discipline.On handling problem behavior, the Searses cover sibling rivalry, spanking and alternatives to spanking, breaking annoying habits, and eliminating bothersome behaviors like whining and talking back. The Searses strongly advocate teaching children values like apologizing and sharing, and explain how to deal with such issues as lying, stealing, and cheating. In addition, the Searses address building healthy sexuality and discipline in special situations such as after divorce and in the single-parent household.</dc:description>
+        <dc:title>The Discipline Book: How to Have a Better-Behaved Child From Birth to Age Ten</dc:title>
+        <book:authoredBy>Martha Sears
+William Sears</book:authoredBy>
+        <book:isbn>0316779032</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/26B48D0E-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0321023870">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Longman Pub Group</foaf:name>
+        </publishedBy>
+        <upc>9780321023872</upc>
+        <uuid>CD3FE396-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description> An ideal accessory in any history course that requires writing, A Short Guide to Writing About History stresses thinking and writing like a historian.  This engaging and practical little text helps the readers get beyond merely compiling dates and facts; it teaches them how to incorporate their own ideas into their papers and to tell a story about history that interests them and their peers. Covering both brief essays and the documented resource paper, this book explores the writing and researching processes, different modes of historical writing including argument and concludes with guidelines for improving style.  For any one who will need to write about history.</dc:description>
+        <dc:title>A Short Guide to Writing About History (Short Guide Series)</dc:title>
+        <book:authoredBy>Richard Marius</book:authoredBy>
+        <book:isbn>0321023870</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/CD3FE396-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a034542008X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Ballantine Books</foaf:name>
+        </publishedBy>
+        <upc>9780345420084</upc>
+        <uuid>200D7ABA-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Why do parachute jumpers yell "Geronimo"?Is it aerodynamically impossible for bumblebees to fly?Will watching too much TV ruin your eyes?Fresh from the popular newspaper column by CECIL ADAMS!WHAT IS CECIL ADAMS'S IQ?"Do you want it in scientific notation? Little Ed, get out the slide rule."--Cecil AdamsFor more than a quarter of a century Cecil Adams has been courageouslyattempting to lift the veil of ignorance surrounding the modern world.Now, in his fifth book, he takes yet another stab, dissecting such classicconundrums as--If you swim less than an hour after eating, will you get cramps and die?--What's the difference between a Looney Tune and a Merrie Melody?--Can you see a Munchkin committing suicide in The Wizard of Oz?--Was The Texas Chainsaw Massacre based on actual events?--Did medieval lords really have "the right of the first night"?And much more!THE CRITICS: STILL RAVING AFTER ALL THESE YEARS!"Trenchant, witty answers to the great imponderables."--Denver Post</dc:description>
+        <dc:title>Triumph of the Straight Dope</dc:title>
+        <book:authoredBy>ED ZOTTI
+CECIL ADAMS</book:authoredBy>
+        <book:isbn>034542008X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/200D7ABA-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0374522758">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Farrar, Straus and Giroux</foaf:name>
+        </publishedBy>
+        <upc>9780374522759</upc>
+        <uuid>476FAA00-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>One of the best-known, best-loved poets of the English-speaking world, Larkin had a relatively small number of poems published during his lifetime. This Collected Poems, which J. D. McClatchy called "a fascinating and indispensable text" in The New York Times Book Review, brings together not only all of Larkin's published verse1The North Ship (1945), the pamphlet of XX Poems (1953), The Less Deceived (1955), The Whitsun Weddings (1964), and High Windows (1974)1but also a vast selection of his uncollected poetry. A brief Introduction by Anthony Thwaite illuminates both the life and verse of this highly perceptive and deeply acerbic poet, a dour yet witty soul whose brilliant writings so often suggest an ongoing conflict between the traditional and the modern.</dc:description>
+        <dc:title>Collected Poems</dc:title>
+        <book:authoredBy>Anthony Thwaite
+Philip Larkin</book:authoredBy>
+        <book:isbn>0374522758</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/476FAA00-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0375725784">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780375725784</upc>
+        <uuid>FC453179-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Dave Eggers is a terrifically talented writer; don't hold his cleverness against him. What to make of a book called A Heartbreaking Work of Staggering Genius: Based on a True Story? For starters, there's a good bit of staggering genius before you even get to the true story, including a preface, a list of "Rules and Suggestions for Enjoyment of This Book," and a 20-page acknowledgements section complete with special mail-in offer, flow chart of the book's themes, and a lovely pen-and-ink drawing of a stapler (helpfully labeled "Here is a drawing of a stapler:").But on to the true story. At the age of 22, Eggers became both an orphan and a "single mother" when his parents died within five months of one another of unrelated cancers. In the ensuing sibling division of labor, Dave is appointed unofficial guardian of his 8-year-old brother, Christopher. The two live together in semi-squalor, decaying food and sports equipment scattered about, while Eggers worries obsessively about child-welfare authorities, molesting babysitters, and his own health. His child-rearing strategy swings between making his brother's upbringing manically fun and performing bizarre developmental experiments on him. (Case in point: his idea of suitable bedtime reading is John Hersey's Hiroshima.)The book is also, perhaps less successfully, about being young and hip and out to conquer the world (in an ironic, media-savvy, Gen-X way, naturally). In the early '90s, Eggers was one of the founders of the very funny Might Magazine, and he spends a fair amount of time here on Might, the hipster culture of San Francisco's South Park, and his own efforts to get on to MTV's Real World. This sort of thing doesn't age very well--but then, Eggers knows that. There's no criticism you can come up with that he hasn't put into A.H.W.O.S.G. already. "The book thereafter is kind of uneven," he tells us regarding the contents after page 109, and while that's true, it's still uneven in a way that is funny and heartfelt and interesting.All this self-consciousness could have become unbearably arch. It's a testament to Eggers's skill as a writer--and to the heartbreaking particulars of his story--that it doesn't. Currently the editor of the footnote-and-marginalia-intensive journal McSweeney's (the last issue featured an entire story by David Foster Wallace printed tinily on its spine), Eggers comes from the most media-saturated generation in history--so much so that he can't feel an emotion without the sense that it's already been felt for him. What may seem like postmodern noodling is really just Eggers writing about pain in the only honest way available to him. Oddly enough, the effect is one of complete sincerity, and--especially in its concluding pages--this memoir as metafiction is affecting beyond all rational explanation. --Mary Park</dc:description>
+        <dc:title>A Heartbreaking Work of Staggering Genius (Vintage)</dc:title>
+        <book:authoredBy>DAVE EGGERS</book:authoredBy>
+        <book:isbn>0375725784</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/FC453179-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0385720181">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Anchor</foaf:name>
+        </publishedBy>
+        <upc>9780385720182</upc>
+        <uuid>FC22F77B-D499-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>The riddle of how Hillary Rodham Clinton metamorphosed from a Goldwater Republican into the leading liberal of her generation is one that will keep whole generations of future historians guessing well into the coming millennium, and you can bet they'll all have well-thumbed copies of Miriam Horn's Rebels in White Gloves. Wellesley has always been the most staunchly conservative of the Seven Sisters women's colleges, but even so, it was no match for the student antiwar protests and rising feminist movement. "We are, all of us, exploring a world that none of us understand," Hillary Rodham noted in the commencement address she delivered to the class of '69. "The only tool we have to use ultimately is our lives." Horn's book is about the myriad ways the future first lady and her classmates used their lives--and, along the way, reinvented the notion of womanhood. Individual stories are given sociological context and grouped together under headings such as "In Search of Self," "Rebellions and New Solidarities," and "Balancing Work and Family." A senior writer for U.S. News and World Report, Horn is an especially gifted interviewer; through her questions, the Wellesley Class of '69 emerge as wise, well-spoken women. And, at this far remove, it is interesting to see what kind of peace they've made with their cloistered Wellesley selves. --Patrizia DiLucchio</dc:description>
+        <dc:title>Rebels in White Gloves : Coming of Age with Hillary's Class--Wellesley '69</dc:title>
+        <book:authoredBy>MIRIAM HORN</book:authoredBy>
+        <book:isbn>0385720181</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/FC22F77B-D499-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0393322572">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>W. W. Norton &#38; Company</foaf:name>
+        </publishedBy>
+        <upc>9780393322576</upc>
+        <uuid>3904C046-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>The book that changed the consciousness of a country1and the world. Landmark, groundbreaking, classic1these adjectives barely describe the earthshaking and long-lasting effects of Betty Friedan's The Feminine Mystique. This is the book that defined "the problem that has no name," that launched the Second Wave of the feminist movement, and has been awakening women and men with its insights into social relations, which still remain fresh, ever since. A national bestseller, with over 1 million copies sold.</dc:description>
+        <dc:title>The Feminine Mystique</dc:title>
+        <book:authoredBy>Anna Quindlen
+Betty Friedan</book:authoredBy>
+        <book:isbn>0393322572</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/3904C046-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0394708652">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780394708652</upc>
+        <uuid>1549ACC6-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The Origins of American Politics</dc:title>
+        <book:authoredBy>BERNARD BAILYN</book:authoredBy>
+        <book:isbn>0394708652</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/1549ACC6-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0446391735">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Warner Books</foaf:name>
+        </publishedBy>
+        <upc>9780446391733</upc>
+        <uuid>963C029A-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Getting Organized</dc:title>
+        <book:authoredBy>Stephanie Winston</book:authoredBy>
+        <book:isbn>0446391735</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/963C029A-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0452281768">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Plume Books</foaf:name>
+        </publishedBy>
+        <upc>9780452281769</upc>
+        <uuid>AB0F869E-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Best known for his syndicated sexual advice column, "Savage Love," Dan Savage shares his own story in The Kid, a hilarious account of his efforts--along with his partner--to adopt a child. (Whoops, make that his boyfriend; Savage can't stand the "genderless" P-word: "Straight people and press organs that want to acknowledge gay relationships while at the same time pushing the two-penises stuff as far out of their minds as possible love 'partner.' I hated it.") Savage doesn't give an inch on the sexuality issue; it's hard to imagine that a homophobic reader would even pick up The Kid, but if it happened, Savage's unapologetic presentation of his life would quickly scare that reader off. Which isn't to say that he paints a rosy picture of homosexual cohabitation: the very first scene finds Dan's boyfriend, Terry, locking himself in the bathroom after a fight over the music on the car stereo. The misadventures continue through each step of the open-adoption process, in which Dan and Terry get to know their baby's birth mother, and the first few weeks of parenthood. The Kid is a wonderful, charming account of real "family values" that proves love knows no limits. </dc:description>
+        <dc:title>The Kid: What Happened After My Boyfriend and I Decided to Go Get Pregnant : An Adoption Story</dc:title>
+        <book:authoredBy>Dan Savage</book:authoredBy>
+        <book:isbn>0452281768</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/AB0F869E-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0553380958">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Spectra</foaf:name>
+        </publishedBy>
+        <upc>9780553380958</upc>
+        <uuid>C2B09801-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>From the opening line of his breakthrough cyberpunk novel Snow Crash, Neal Stephenson plunges the reader into a not-too-distant future. It is a world where the Mafia controls pizza delivery, the United States exists as a patchwork of corporate-franchise city-states, and the Internet--incarnate as the Metaverse--looks something like last year's hype would lead you to believe it should. Enter Hiro Protagonist--hacker, samurai swordsman, and pizza-delivery driver. When his best friend fries his brain on a new designer drug called Snow Crash and his beautiful, brainy ex-girlfriend asks for his help, what's a guy with a name like that to do? He rushes to the rescue. A breakneck-paced 21st-century novel, Snow Crash interweaves everything from Sumerian myth to visions of a postmodern civilization on the brink of collapse. Faster than the speed of television and a whole lot more fun, Snow Crash is the portrayal of a future that is bizarre enough to be plausible. </dc:description>
+        <dc:title>Snow Crash (Bantam Spectra Book)</dc:title>
+        <book:authoredBy>NEAL STEPHENSON</book:authoredBy>
+        <book:isbn>0553380958</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C2B09801-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0553381350">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Bantam</foaf:name>
+        </publishedBy>
+        <upc>9780553381351</upc>
+        <uuid>A6989EAA-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Tom Wolfe began The Right Stuff at a time when it was unfashionable to contemplate American heroism. Nixon had left the White House in disgrace, the nation was reeling from the catastrophe of Vietnam, and in 1979--the year the book appeared--Americans were being held hostage by Iranian militants. Yet it was exactly the anachronistic courage of his subjects that captivated Wolfe. In his foreword, he notes that as late as 1970, almost one in four career Navy pilots died in accidents. "The Right Stuff," he explains, "became a story of why men were willing--willing?--delighted!--to take on such odds in this, an era literary people had long since characterized as the age of the anti-hero."Wolfe's roots in New Journalism were intertwined with the nonfiction novel that Truman Capote had pioneered with In Cold Blood. As Capote did, Wolfe tells his story from a limited omniscient perspective, dropping into the lives of his "characters" as each in turn becomes a major player in the space program. After an opening chapter on the terror of being a test pilot's wife, the story cuts back to the late 1940s, when Americans were first attempting to break the sound barrier. Test pilots, we discover, are people who live fast lives with dangerous machines, not all of them airborne. Chuck Yeager was certainly among the fastest, and his determination to push through Mach 1--a feat that some had predicted would cause the destruction of any aircraft--makes him the book's guiding spirit.Yet soon the focus shifts to the seven initial astronauts. Wolfe traces Alan Shepard's suborbital flight and Gus Grissom's embarrassing panic on the high seas (making the controversial claim that Grissom flooded his Liberty capsule by blowing the escape hatch too soon). The author also produces an admiring portrait of John Glenn's apple-pie heroism and selfless dedication. By the time Wolfe concludes with a return to Yeager and his late-career exploits, the narrative's epic proportions and literary merits are secure. Certainly The Right Stuff is the best, the funniest, and the most vivid book ever written about America's manned space program. --Patrick O'Kelley</dc:description>
+        <dc:title>The Right Stuff</dc:title>
+        <book:authoredBy>Tom Wolfe</book:authoredBy>
+        <book:isbn>0553381350</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/A6989EAA-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0618249060">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Mariner Books</foaf:name>
+        </publishedBy>
+        <upc>0046442249065</upc>
+        <uuid>82C03D8C-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Silent Spring, released in 1962, offered the first shattering look at widespread ecological degradation and touched off an environmental awareness that still exists. Rachel Carson's book focused on the poisons from insecticides, weed killers, and other common products as well as the use of sprays in agriculture, a practice that led to dangerous chemicals to the food source. Carson argued that those chemicals were more dangerous than radiation and that for the first time in history, humans were exposed to chemicals that stayed in their systems from birth to death. Presented with thorough documentation, the book opened more than a few eyes about the dangers of the modern world and stands today as a landmark work.</dc:description>
+        <dc:title>Silent Spring</dc:title>
+        <book:authoredBy>Rachel Carson</book:authoredBy>
+        <book:isbn>0618249060</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/82C03D8C-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0669388130">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Write Source</foaf:name>
+        </publishedBy>
+        <upc>9780669388138</upc>
+        <uuid>C4928543-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>It's meant for high schoolers, but adults who haven't inhaled chalk dust for years might appreciate it even more. The process of organizing, researching and writing a paper is laid is out in easy-to-understand normal-speak. The chapters on grammar and usage are very user-friendly, and lots of extras (suffixes, parliamentary procedure, periodic table, metric system, the U.S. Constitution, world maps, etc.) make this an extraordinarily popular and useful household item. If you're feeling generous, you might even let the kid take it to school on occasion.</dc:description>
+        <dc:title>Writers Inc: A Student Handbook for Writing &#38; Learning</dc:title>
+        <book:authoredBy>Patrick Sebranek
+Verne Meyer
+Dave Kemper</book:authoredBy>
+        <book:isbn>0669388130</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C4928543-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a067102762X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Atria</foaf:name>
+        </publishedBy>
+        <upc>9780671027629</upc>
+        <uuid>099F38DA-D494-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>"Attachment to and dependency on parents... is a normal, healthy aspect of childhood and not something that needs to be discouraged." This quote from Attachment Parenting: Instinctive Care for Your Baby and Young Child sums up the attitude behind the growing shift in many Western cultures toward a labor-intensive but arguably more rewarding, effective, and "natural" way to raise children. This philosophy, termed "Attachment Parenting" by its champion, pediatrician and father of eight Dr. William Sears (author of the popular child-care manual The Baby Book, among others), sees infants not as manipulative adversaries who must be "trained" to eat, sleep, and play when told, but as dependent yet autonomous human beings whose wants and needs are intelligible to the parent willing to listen, and who deserve to be responded to in a reasonable and sensitive manner. As with Sears's books, there are no plans or schedules here, no specific prescriptions for what to do with your child. Techniques to facilitate connection and communication are outlined, but mostly the book is an exhortation to listen and to trust yourself, and to trust your child's ability to convey to you what he or she needs.Information is provided in a well-organized format that parents will find useful. Common questions regarding some of Attachment Parenting's less orthodox tenets are answered, and each section of the book provides lengthy reading and resource lists, Web sites, and e-mail addresses. This book also provides a fairly broad discussion of how working parents can incorporate such a "high-touch" style of care into their busy schedules. The authors are sometimes painfully straightforward about the cost-benefit analysis parents must go through when deciding to work outside the home, but they do not patronize working parents by glossing over this difficult decision. They show how Attachment Parenting can be especially beneficial to these families and give advice on choosing child care, breastfeeding after returning to work, and the techniques for creating a breastfeeding-friendly workplace.Given the overwhelming cultural paradigms that parents must resist if they are going to adopt this compassionate methodology, the book's sometimes defensive tone can be at least partially excused. As a whole, parents will find this a good overview of some compelling arguments for Attachment Parenting and a wonderful resource for delving deeper into the issues it addresses. How much of it they choose to integrate into their lives is, as the book emphasizes, their decision to make, with their baby. --Katherine Ferguson</dc:description>
+        <dc:title>Attachment Parenting: Instinctive Care for Your Baby and Young Child</dc:title>
+        <book:authoredBy>Betsy Kennedy
+Katie Allison Granju
+William Sears</book:authoredBy>
+        <book:isbn>067102762X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/099F38DA-D494-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a067151928X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Pocket</foaf:name>
+        </publishedBy>
+        <upc>9780671519285</upc>
+        <uuid>8CF5B0FF-D493-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The BOOK OF BAD VIRTUES : THE BOOK OF BAD VIRTUES</dc:title>
+        <book:authoredBy>Tony Hendra</book:authoredBy>
+        <book:isbn>067151928X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/8CF5B0FF-D493-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0671638106">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Fireside</foaf:name>
+        </publishedBy>
+        <upc>9780671638108</upc>
+        <uuid>72ABBC88-D493-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Divine obfuscation has a purpose. This is the classic that ushered in so many imitators, imitators who did not get "it.""It" is slack, the desiderata that cannot be desired and is only attainable through "Bob," the evil god/male model who founded the Church of the SubGenius without bothering to "exist." If you read this holy book properly, you will learn to "pull the wool over your own eyes." While this volume may seem hilarious, it's also an incredibly adept deconstruction of religion in general and the human impulse to believe in and follow anyone who promises to give their lives meaning and structure. Plus, it's the only place to find the information you need to survive when the bad alien gods come out of the sky to kill, enslave, and entertain us. If you don't already have a copy, then hand in your hipness ID card and hang your head in shame.</dc:description>
+        <dc:title>The Book of the SubGenius : Being the Divine Wisdom, Guidance, and Prophecy of J.R. 'Bob' Dobbs, High Epopt of the Church of the SubGenius, Here Inscribed for the Salvation of Future Generations and in the Hope that Slack May Someday Reign on this Earth</dc:title>
+        <book:authoredBy>J.R. Dobbs
+The SubGenius Foundation
+Rev. Ivan Stang</book:authoredBy>
+        <book:isbn>0671638106</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/72ABBC88-D493-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0671770063">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Fireside</foaf:name>
+        </publishedBy>
+        <upc>9780671770068</upc>
+        <uuid>827B6791-D493-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>For those who didn't get enough "Bob" out of the original Book of the SubGenius, Revelation X provides more of the same. If anything, this book is more pointed and trenchant than its predecessor. Having watched as hundreds of zinesters, graffiti artists, and Hollywood hipster wanna-bes ripped off their imagery and ideas, the SubGenii have gained even more insight into the wretchedness of the human need to follow rather than create. Encouraging this tendency in others while also making a buck off of it, the SubGenii have produced a well-aimed and painfully funny volume that parodies religion, the cult of cool, the notion of an underground, and the very idea of selling out.</dc:description>
+        <dc:title>Revelation X : The 'Bob'Apocryphon : Hidden Teachings and Deuterocanonical Texts of J.R. 'Bob' Dobbs</dc:title>
+        <book:authoredBy>The SubGenius Foundation
+J.R. 'Bob' Dobbs
+Rev. Ivan Stang
+Paul Mavrides</book:authoredBy>
+        <book:isbn>0671770063</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/827B6791-D493-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0673525120">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Longman Pub Group</foaf:name>
+        </publishedBy>
+        <upc>9780673525123</upc>
+        <uuid>068FFC8D-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>This best-selling reader on families and intimate relationships identifies the most current trends and places them in historical context. The reader balances cutting-edge scholarship with perennial favorites. Many selections support the authors50 claim of a 2triple revolution3 transforming contemporary family life: the move to a postindustrial service and information economy; a life course revolution brought about by reduced mortality and fertility; and psychological changes rooted in rising educational levels. Anyone looking for a collection of classic and contemporary readings on the sociology of the family.</dc:description>
+        <dc:title>Family in Transition</dc:title>
+        <book:authoredBy>Arlene S. Skolnick
+Jerome H. Skolnick</book:authoredBy>
+        <book:isbn>0673525120</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679721037">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679721031</upc>
+        <uuid>6BC5098C-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>When the atomic bomb was dropped on Hiroshima, few could have anticipated its potential for devastation. Pulitzer prize-winning author John Hersey recorded the stories of Hiroshima residents shortly after the explosion and, in 1946, Hiroshima was published, giving the world first-hand accounts from people who had survived it. The words of Miss Sasaki, Dr. Fujii, Mrs. Nakamara, Father Kleinsorg, Dr. Sasaki, and the Reverend Tanimoto gave a face to the statistics that saturated the media and solicited an overwhelming public response. Whether you believe the bomb made the difference in the war or that it should never have been dropped, "Hiroshima" is a must read for all of us who live in the shadow of armed conflict.</dc:description>
+        <dc:title>Hiroshima</dc:title>
+        <book:authoredBy>JOHN HERSEY</book:authoredBy>
+        <book:isbn>0679721037</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/6BC5098C-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679735798">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679735793</upc>
+        <uuid>3E630636-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Sexual Personae : Art &#38; Decadence from Nefertiti to Emily Dickinson</dc:title>
+        <book:authoredBy>CAMILLE PAGLIA</book:authoredBy>
+        <book:isbn>0679735798</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/3E630636-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679736883">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679736882</upc>
+        <uuid>C95DF94C-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The Radicalism of the American Revolution</dc:title>
+        <book:authoredBy>GORDON S. WOOD</book:authoredBy>
+        <book:isbn>0679736883</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C95DF94C-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679741011">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679741015</upc>
+        <uuid>723F8D45-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>A collection of twenty of Paglia's out-spoken essays on contemporary issues in America's ongoing cultural debate such as Anita Hill, Robert Mapplethorpe, the beauty myth, and the decline of education in America.</dc:description>
+        <dc:title>Sex, Art, and American Culture : Essays</dc:title>
+        <book:authoredBy>CAMILLE PAGLIA</book:authoredBy>
+        <book:isbn>0679741011</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/723F8D45-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679779159">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679779155</upc>
+        <uuid>7DD11B32-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>This is a genius-level piece of writing that manages to blend literary biography with self-help and tongue-in-cheek with the profound. The quirky, early 1900s French author Marcel Proust acts as the vessel for surprisingly impressive nuggets of wisdom on down-to-earth topics such as why you should never sleep with someone on the first date, how to protect yourself against lower back pain, and how to cope with obnoxious neighbors. Here's proof that our ancestors had just as much insight as the gurus du jour and perhaps a lot more wit. De Botton simultaneously pokes fun at the self-help movement and makes a significant contribution to its archives.</dc:description>
+        <dc:title>How Proust Can Change Your Life: Not a Novel</dc:title>
+        <book:authoredBy>ALAIN DE BOTTON</book:authoredBy>
+        <book:isbn>0679779159</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/7DD11B32-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0679785892">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9780679785897</upc>
+        <uuid>A44B724C-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Heralded as the "best book on the dope decade" by the New York Times Book Review, Hunter S. Thompson's documented drug orgy through Las Vegas would no doubt leave Nancy Reagan blushing and D.A.R.E. founders rethinking their motto. Under the pseudonym of Raoul Duke, Thompson travels with his Samoan attorney, Dr. Gonzo, in a souped-up convertible dubbed the "Great Red Shark." In its trunk, they stow "two bags of grass, seventy-five pellets of mescaline, five sheets of high-powered blotter acid, a salt shaker half-full of cocaine and a whole galaxy of multicolored uppers, downers, screamers, laughers.... A quart of tequila, a quart of rum, a case of Budweiser, a pint of raw ether and two dozen amyls," which they manage to consume during their short tour.On assignment from a sports magazine to cover "the fabulous Mint 400"--a free-for-all biker's race in the heart of the Nevada desert--the drug-a-delic duo stumbles through Vegas in hallucinatory hopes of finding the American dream (two truck-stop waitresses tell them it's nearby, but can't remember if it's on the right or the left). They of course never get the story, but they do commit the only sins in Vegas: "burning the locals, abusing the tourists, terrifying the help." For Thompson to remember and pen his experiences with such clarity and wit is nothing short of a miracle; an impressive feat no matter how one feels about the subject matter. A first-rate sensibility twinger, Fear and Loathing in Las Vegas is a pop-culture classic, an icon of an era past, and a nugget of pure comedic genius. --Rebekah Warren</dc:description>
+        <dc:title>Fear and Loathing in Las Vegas: A Savage Journey to the Heart of the American Dream</dc:title>
+        <book:authoredBy>Hunter S. Thompson</book:authoredBy>
+        <book:isbn>0679785892</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/A44B724C-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0684818248">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Fireside</foaf:name>
+        </publishedBy>
+        <upc>9780684818245</upc>
+        <uuid>FFDB9CB9-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>60-second solutions to help you get organized -- and get on with your lifeAre you overwhelmed by the clutter in your files and on your desk? Are you tired of being clobbered by clothes and hangers every time you open the closet door? Do household chores take twice as long as they should? Does the very thought of getting organized intimidate you -- because you don't know how, it takes too long, and you'd rather be doing anything else? Then this is the book for you.Featuring clear, quick-to-read lists and a meticulously detailed index, Stephanie Winston's Best Organizing Tips pinpoints how to:* Do away with disarray in closets, cupboards, and cabinets* Lighten the load of household chores* Eliminate desk mess and paperwork pileups* Make short work of bill paying and taxes* Take maximum advantage of precious "found time"For perfectionist and procrastinator alike, Stephanie Winston's Best Organizing Tips will prove indispensable.</dc:description>
+        <dc:title>STEPHANIE WINSTON'S BEST ORGANIZING TIPS : Quick, Simple Ways to Get Organized and Get on with Your Life</dc:title>
+        <book:authoredBy>Stephanie Winston</book:authoredBy>
+        <book:isbn>0684818248</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/FFDB9CB9-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0684832674">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Simon &#38; Schuster</foaf:name>
+        </publishedBy>
+        <upc>9780684832678</upc>
+        <uuid>6AE42331-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Considering that the history of the Internet is perhaps better documented internally than any other technological construct, it is remarkable how shadowy its origins have been to most people, including die-hard Net-denizens!At last, Hafner and Lyon have written a well-researched story of the origins of the Internet substantiated by extensive interviews with its creators who delve into many interesting details such as the controversy surrounding the adoption of our now beloved "@" sign as the separator of usernames and machine addresses. Essential reading for anyone interested in the past -- and the future -- of the Net specifically, and telecommunications generally.</dc:description>
+        <dc:title>Where Wizards Stay Up Late: The Origins Of The Internet</dc:title>
+        <book:authoredBy>Katie Hafner</book:authoredBy>
+        <book:isbn>0684832674</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/6AE42331-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0684834421">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Free Press</foaf:name>
+        </publishedBy>
+        <upc>9780684834429</upc>
+        <uuid>1B800FBA-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>In this stirring rebuke to the doomsday writings of feminist authors such as Susan Faludi (Backlash), Cathy Young provides a commonsense approach to resolving the political and personal war between the sexes. There is no "war against women," proclaims Young, who smartly rebuts the phony scholarship of advocacy groups on a series of controversial issues, from the incidence of domestic violence (not as frequent as you might think) to the wage gap (much smaller than you've been told). Young's intelligent handling of this data--the strongest aspect of the book--allows her to advance dozens of contrarian ideas. Although many of her targets are on the political left, she certainly is no right-winger. In fact, Young embraces many aspects of the sexual revolution, and devotes an entire chapter to attacking conservative authors such as George Gilder and F. Carolyn Graglia for their views on gender. In the final chapter of Ceasefire, Young offers a series of proposals for de-escalating the gender wars: don't assume sexism is the root cause of all women's problems, rewrite sexual harassment law, demand that husbands and wives serve as equal parents, and so on. Many readers will haggle with Young over several of her interpretations, but by book's end she probably will have them on her side. A well-argued and carefully reasoned polemic. --John J. Miller</dc:description>
+        <dc:title>CEASEFIRE! : WHY WOMEN AND MEN MUST JOIN FORCES TO ACHIEVE TRUE EQUALITY</dc:title>
+        <book:authoredBy>Cathy Young</book:authoredBy>
+        <book:isbn>0684834421</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/1B800FBA-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0688142346">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Quill</foaf:name>
+        </publishedBy>
+        <upc>9780688142346</upc>
+        <uuid>C0073FE2-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>In Racism 101, Nikki Giovanni indicts higher education for the inequities it perpetuates, contemplates the legacy of the 1960s, provides a survival guide for black students on predominantly white campuses (complete with razor-sharp comebacks to the dumb questions constantly asked of black students), and excoriates Spike Lee while offering her own ideas for a film about Malcolm X. And that's just for starters. She also writes about W.E.B. Du Bois, gardening, Toni Morrison, Star Trek, affirmative action, President John F. Kennedy, the role of griots, and the rape and neglect of urban schools.Profoundly personal and blisteringly political, angry and funny, lyrical and blunt, Racism 101 will add an important chapter to the debate on American national values.</dc:description>
+        <dc:title>Racism 101</dc:title>
+        <book:authoredBy>Nikki Giovanni</book:authoredBy>
+        <book:isbn>0688142346</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C0073FE2-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0691070547">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Princeton University Press</foaf:name>
+        </publishedBy>
+        <upc>9780691070544</upc>
+        <uuid>2DB6BC59-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>This exploration of cultural resilience examines the complex fate of classical Egyptian religion during the centuries from the period when Christianity first made its appearance in Egypt to when it became the region's dominant religion (roughly 100 to 600 C.E. Taking into account the full range of witnesses to continuing native piety--from papyri and saints' lives to archaeology and terracotta figurines--and drawing on anthropological studies of folk religion, David Frankfurter argues that the religion of Pharonic Egypt did not die out as early as has been supposed but was instead relegated from political centers to village and home, where it continued a vigorous existence for centuries.In analyzing the fate of the Egyptian oracle and of the priesthoods, the function of magical texts, and the dynamics of domestic cults, Frankfurter describes how an ancient culture maintained itself while also being transformed through influences such as Hellenism, Roman government, and Christian dominance. Recognizing the special characteristics of Egypt, which differentiated it from the other Mediterranean cultures that were undergoing simultaneous social and political changes, he departs from the traditional "decline of paganism/triumph of Christianity" model most often used to describe the Roman period. By revealing late Egyptian religion in its Egyptian historical context, he moves us away from scenarios of Christian triumph and shows us how long and how energetically pagan worship survived.</dc:description>
+        <dc:title>Religion in Roman Egypt</dc:title>
+        <book:authoredBy>David Frankfurter</book:authoredBy>
+        <book:isbn>0691070547</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/2DB6BC59-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0740704818">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Andrews McMeel Publishing</foaf:name>
+        </publishedBy>
+        <upc>9780740704819</upc>
+        <uuid>AFC2A0F0-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>The Blue Day Book is a wonderful collection of amusing, poignant animal photos and inspirational text designed to lift the spirits of anyone who's got the blues. No one who has lips will be able to read it without smiling; it's guaranteed.The fact is, we all have our bad days-they are an intrinsic part of being human. As prescribed by The Blue Day Book in its delightful photo and text messages, the solution is to see each incident in perspective, recognize that our feelings of failure and loss are not unique, acknowledge the absurdities of our existence, and glory in the potential we all have. In less than 100 sentences, The Blue Day Book conveys this message with great compassion and humor. Its vehicle is charming black-and-white photographs of animals that are strangely human and completely free of judgment or pretension. The humble marriage of easy text and beautiful images takes the reader through the entire evolution of a blue day, examines what it feels like, what causes it, and how to get over it.</dc:description>
+        <dc:title>The Blue Day Book</dc:title>
+        <book:authoredBy>Bradley Trevor Greive</book:authoredBy>
+        <book:isbn>0740704818</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/AFC2A0F0-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0743456122">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Washington Square Press</foaf:name>
+        </publishedBy>
+        <upc>9780743456128</upc>
+        <uuid>04265917-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>AFTER September 11, 2001,emotions couldn't be clearly defined.There were no WORDSstrong enough to justify, avenge, explain, or express the sheer magnitude ofthis horrifyingly unique moment in history.In this remarkable anthology, compiled by Salon.com's award-winning editorial team, Rick Moody, Janet Fitch, Caroline Knapp, and Jeffrey Eugenides join many contemporary literary talents and reporters in giving a voice to the day that left a stunning roar of silence across America.Dread, fear, heroism, and dignity color these pages from eyewitness accounts of ordinary citizens turned rescue workers, to an escape from the World Trade Center, a report on everyday New Yorkers finding comfort in "terror sex," and stories of miracles in the madness -- like that of a blind man led by his seeing-eye dog down eighty-seven flights of stairs to safety.Afterwords also probes the aftermath of the attacks on the nation and the world's cultural, political, and social fabric through writing ranging from an in-depth interview with controversial social critic Noam Chomsky, to a female Pakistani-American journalist's meeting with a Taliban leader and his wives, and essays on how sheer horror gave way to heartening solidarity, macabre spectacle, and kitschy sentimentality.Immediate, raw, emotional, and empowering, this outstanding collection speaks brilliantly to the simple need to remember and comprehend what happened against that perfect blue sky on September 11, 2001.A portion of the royalties will be donated to the Twin Towers Fund and the Red Cross's Fund for Afghan Children.</dc:description>
+        <dc:title>Afterwords: Stories and Reports from 9/11 and Beyond</dc:title>
+        <book:authoredBy>David Talbot</book:authoredBy>
+        <book:isbn>0743456122</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/04265917-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0760720509">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Barnes &#38; Nobel Books</foaf:name>
+        </publishedBy>
+        <upc></upc>
+        <uuid>09822DF3-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>This translation by Thomas Cleary contains selections chosen for their clarity and insight for incorporating teachings of Zen into modern life.</dc:description>
+        <dc:title>Teachings of Zen</dc:title>
+        <book:authoredBy>Thomas Cleary</book:authoredBy>
+        <book:isbn>0760720509</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/09822DF3-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0767410033">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>McGraw-Hill Humanities/Social Sciences/Languages</foaf:name>
+        </publishedBy>
+        <upc>9780767410038</upc>
+        <uuid>878050BD-D493-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Through individual stories, essays, and critical analyses, this anthology introduces issues of race, class, and gender within an interdisciplinary framework. Themes of identity, power, and change are examined from many different perspectives and voices. </dc:description>
+        <dc:title>Experiencing Race, Class, and Gender in the United States</dc:title>
+        <book:authoredBy>Virginia  Cyrus</book:authoredBy>
+        <book:isbn>0767410033</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/878050BD-D493-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0801486076">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Cornell University Press</foaf:name>
+        </publishedBy>
+        <upc>9780801486074</upc>
+        <uuid>63A38AB2-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>This authoritative and concise work surveys the range of warfare in the high Middle Ages while reflecting on the society that produced these military struggles. The book brings together for the first time a wealth of information on such topics as knighthood, military organization, weaponry and fortifications, and warfare in the East. In 1095 with the launching of the First Crusade, Europeans established a great military endeavour to save the Holy Land, an undertaking that remained a central preoccupation until the end of the thirteenth century. While the expeditions that went forth to fight the Muslims involved armies of exceptional size, much of the warfare within western Europe itself was conducted by small armies on behalf of landowners who were often neighbours and kin. In his approach to his subject, John France considers political, social, and economic development in the age of the crusades. He emphasizes the significance of four factors in shaping medieval warfare: the dominance of land as a form of wealth, the limited competence of government, the state of technology that favoured defence over attack, and the geography and climate of western Europe. His coverage of the castle and the knight in armour depicts the role of landowners in producing these characteristic medieval instruments of war. In addition, France provides an extensive analysis of battles in which he reconstructs a series of encounters in superb detail.</dc:description>
+        <dc:title>Western Warfare in the Age of the Crusades, 1000-1300</dc:title>
+        <book:authoredBy>John France</book:authoredBy>
+        <book:isbn>0801486076</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/63A38AB2-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0804002800">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Swallow Press</foaf:name>
+        </publishedBy>
+        <upc>9780804002806</upc>
+        <uuid>8E96E407-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Spy in the House of Love</dc:title>
+        <book:authoredBy>Anais Nin</book:authoredBy>
+        <book:isbn>0804002800</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/8E96E407-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0805066691">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Henry Holt &#38; Company</foaf:name>
+        </publishedBy>
+        <upc>9780805066692</upc>
+        <uuid>22AC86EE-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>First published in 1970, this extraordinary book changed the way Americans think about the original inhabitants of their country. Beginning with the Long Walk of the Navajos in 1860 and ending 30 years later with the massacre of Sioux men, women, and children at Wounded Knee in South Dakota, it tells how the American Indians lost their land and lives to a dynamically expanding white society. During these three decades, America's population doubled from 31 million to 62 million. Again and again, promises made to the Indians fell victim to the ruthlessness and greed of settlers pushing westward to make new lives. The Indians were herded off their ancestral lands into ever-shrinking reservations, and were starved and killed if they resisted. It is a truism that "history is written by the victors"; for the first time, this book described the opening of the West from the Indians' viewpoint. Accustomed to stereotypes of Indians as red savages, white Americans were shocked to read the reasoned eloquence of Indian leaders and learn of the bravery with which they and their peoples endured suffering. With meticulous research and in measured language overlaying brutal narrative, Dee Brown focused attention on a national disgrace. Still controversial but with many of its premises now accepted, Bury My Heart at Wounded Knee has sold 5 million copies around the world. Thirty years after it first broke onto the national conscience, it has lost none of its importance or emotional impact. --John Stevenson</dc:description>
+        <dc:title>Bury My Heart at Wounded Knee: An Indian History of the American West</dc:title>
+        <book:authoredBy>Dee Alexander Brown
+Dee Brown</book:authoredBy>
+        <book:isbn>0805066691</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/22AC86EE-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0807846066">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>University of North Carolina Press</foaf:name>
+        </publishedBy>
+        <upc>9780807846063</upc>
+        <uuid>716B6DC8-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>A Revolutionary People at War: The Continental Army and American Character, 1775-1783</dc:title>
+        <book:authoredBy>Charles Royster</book:authoredBy>
+        <book:isbn>0807846066</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/716B6DC8-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0812092813">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Barron's Educational Series</foaf:name>
+        </publishedBy>
+        <upc>9780812092813</upc>
+        <uuid>0D9E8CE7-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>What you see is what you get when it comes to this popular series of foreign-language grammar titles, and here what you get is 501 French Verbs, fully conjugated in every tense the French language has to offer. (That would be 28, in case you're counting.) You'll also find verb drills and tests as well as definitions of important grammatical terms, an index of irregular verb forms, lists of vernacular expressions and idioms, and much more. If you can't find the verb you're looking for in the 501 "model" verbs, author Christopher Kendris provides an index of 1,000 additional verbs that are conjugated in the same way as one of the 501. A lifesaver for anyone who does much writing in French, 501 French Verbs is an absolutely essential reference for every serious student of the language.</dc:description>
+        <dc:title>501 French Verbs: Fully Conjugated in All the Tenses in a New Easy-To-Learn Format Alphabetically Arranged</dc:title>
+        <book:authoredBy>Christopher Kendris</book:authoredBy>
+        <book:isbn>0812092813</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/0D9E8CE7-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0822327708">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Duke University Press</foaf:name>
+        </publishedBy>
+        <upc>9780822327707</upc>
+        <uuid>55A0E1AA-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Russia has a new parliament and a new president, and the shape of its future political life remains uncertain. Taking the elections of 1999 and 2000 as their starting point, the contributors to Developments in Russian Politics 5 describe the institutional framework of the post0Yeltsin system and examine the policy choices that confront the Putin administration. This completely revised edition includes new discussions of such topics as media and political communication, crime and corruption, and Russia5s continuing search for a 4national idea.5 Other sections cover elections and electoral procedures, parties and organized interests, as well as economic, social, and foreign policy.Written by leading scholars from both sides of the Atlantic, Developments in Russian Politics 5 will replace earlier editions as the leading text for students of Russia and for a wider group of readers seeking a reliable and up-to-date introduction to the politics of the world5s largest country.</dc:description>
+        <dc:title>Developments in Russian Politics 5</dc:title>
+        <book:authoredBy>Stephen White
+Alex Pravda
+Zvi Y. Gitelman</book:authoredBy>
+        <book:isbn>0822327708</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a083844573X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Heinle &#38; Heinle Publishers</foaf:name>
+        </publishedBy>
+        <upc></upc>
+        <uuid>F95C544D-D48E-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Interaction 5/e offers unparalleled support for the study of culture, literature, and language at the intermediate level - all in a single textbook. Each theme-based chapter of Interaction 5/e encourages students to expand linguistic and cultural knowledge through readings, communicative activities, text-specific video, and guided Internet activities, while a thoughtful mix of literary readings and reading assistant software emphasizing reading strategies develops the skills necessary to succeed in upper-division course work.</dc:description>
+        <dc:title>Interaction: Revision De Grammaire Francaise</dc:title>
+        <book:authoredBy>Susan St. Onge
+Ronald St. Onge
+Katherine Kulick
+David King</book:authoredBy>
+        <book:isbn>083844573X</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a087113375X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Atlantic Monthly Press</foaf:name>
+        </publishedBy>
+        <upc>9780871133755</upc>
+        <uuid>C9A0C31E-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>As one of the few folks who made it out of the National Lampoon alive and writing, P. J. O'Rourke is--a comment that might please him more than most humorists--an elder statesman of American humor. While this says much about the thinness of the field, you gotta give him his props.Modern Manners is good, early O'Rourke, a book that you can read and enjoy without being to the right of Francisco Franco. Who can resist lines such as "A hat should be taken off when you greet a lady and left off for the rest of your life. Nothing looks more stupid than a hat." Or, "Don't wear a tweed jacket to work unless you expect to flush a covey of quail from behind the Xerox machine." Manners are a moving target, and some sections are in need of revision (cocaine really was a big deal, wasn't it?), but don't let that dissuade you. By and large, Modern Manners comes through admirably.</dc:description>
+        <dc:title>Modern Manners: An Etiquette Book for Rude People</dc:title>
+        <book:authoredBy>P.J. O'Rourke</book:authoredBy>
+        <book:isbn>087113375X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/C9A0C31E-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0874515947">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>University Press of New England</foaf:name>
+        </publishedBy>
+        <upc>9780874515947</upc>
+        <uuid>415F6B61-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>A true picture of relationships between the Indians of northern New England and the European settlers.</dc:description>
+        <dc:title>Dawnland Encounters: Indians and Europeans in Northern New England</dc:title>
+        <book:authoredBy>Colin G. Calloway</book:authoredBy>
+        <book:isbn>0874515947</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/415F6B61-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0874552427">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Compute</foaf:name>
+        </publishedBy>
+        <upc>9780874552423</upc>
+        <uuid>F02B96E0-D493-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Conquering Super Mario Brothers</dc:title>
+        <book:authoredBy>Steven Schwartz</book:authoredBy>
+        <book:isbn>0874552427</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0877799148">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Merriam-Webster</foaf:name>
+        </publishedBy>
+        <upc>0081413009149</upc>
+        <uuid>57749D54-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>An invaluable resource for health care professionals in understanding the language of contemporary health and medicine. It is a comprehensive, easy-to-use guide of over 57,000 entries to todays most widely used health-care terms, abbreviations, medication names and more. Included are over 44,000 audio pronunciations and contains eight search options.</dc:description>
+        <dc:title>Merriam-Webster's Medical Dictionary</dc:title>
+        <book:authoredBy>Roger W., Jr. Pease
+Merriam-Webster</book:authoredBy>
+        <book:isbn>0877799148</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/57749D54-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a088295041X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Harlan Davidson</foaf:name>
+        </publishedBy>
+        <upc>9780882950419</upc>
+        <uuid>7C327A24-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>"These essays on the Constitution were written by busy men in the midst of an active public and professional life, written with immense haste, and without proper time for consultation.... Yet even when they first appeared, the Federalist papers were recognized as the best explanation of and defense of the Constitution available, and they took their place, almost at once, as a classic. Jefferson--no Federalist himself--pronounced the volume, when it appeared, "the best commentary on the principles of government which has ever been written.""--From the Introduction by Editor, Henry S. Commager. Includes bibliography. </dc:description>
+        <dc:title>Selections from the Federalist: A Commentary on the Constitution of the United States (Crofts Classics)</dc:title>
+        <book:authoredBy>Hnery S. Commanger
+Alexander Hamilton
+James Madison
+John Jay
+Henry Steele Commager</book:authoredBy>
+        <book:isbn>088295041X</book:isbn>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a0940208156">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Down There Press</foaf:name>
+        </publishedBy>
+        <upc>9780940208155</upc>
+        <uuid>21A22BFC-D496-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Femalia</dc:title>
+        <book:authoredBy>Joani Blank</book:authoredBy>
+        <book:isbn>0940208156</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/21A22BFC-D496-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a096265342X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Illuminet Press</foaf:name>
+        </publishedBy>
+        <upc>9780962653421</upc>
+        <uuid>8A05C870-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Principia Discordia</dc:title>
+        <book:authoredBy>Omar K. Ravenhurst</book:authoredBy>
+        <book:isbn>096265342X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/8A05C870-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a1400032903">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Vintage</foaf:name>
+        </publishedBy>
+        <upc>9781400032907</upc>
+        <uuid>CF455264-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>When a U.S. Marine is killed in Bangkok, the task of finding the murderer falls to Detective Sonchai Jitpleecheep, seemingly the only member of the Royal Thai Police Force whose idea of justice precludes his fellow officers' customary system of bribery. This assignment's especially important to the devout detective for during the investigation of the murder scene, the methamphetamine-stoked snakes that bit the marine also kill Sonchai's police partner, best friend, and Buddhist soul-mate Pichai. Sonchai's pursuit of revenge will team him with a sexually frustrated FBI agent and leave them at the mercy of yaa-baa-fueled motorcycle-taxi drivers as they hurtle through neon-lit Bangkok and into the labyrinthine and deadly machinations of the international jade and drug trades in search of the killer.As Sonchai himself notes at one point, "This isn't a whodunit, is it?" And, no, it isn't, but author John Burdett (A Personal History of Thirst, The Last Six Million Seconds) infuses the plot with enough suspense, detail, and dry Asian insight to keep readers rapt as the story careens about the bars and brothels of Thailand's flesh trade, through its cut-rate plastic surgery parlors, and ends in a climax with a fittingly Buddhist twist. Bangkok 8 is highly recommended for readers in the mood for Thai. --Benjamin Reese</dc:description>
+        <dc:title>Bangkok 8 : A Novel (Vintage)</dc:title>
+        <book:authoredBy>JOHN BURDETT</book:authoredBy>
+        <book:isbn>1400032903</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/CF455264-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a1567183638">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Llewellyn Publications</foaf:name>
+        </publishedBy>
+        <upc>9781567183634</upc>
+        <uuid>0E956167-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Do you want to learn the secrets of the Tarot? Has it always fascinated you but seemed too complicated? Now you can learn to give excellent readings with any Tarot deck thanks to P. Scott Hollander's book, Tarot for Beginners.This book is written in plain English no weird language or arcane references so you can understand it. There is no need to know anything about any other occult subject. Just get any Tarot deck and this book, and you'll have all you need to give great Tarot readings.Each card is thoroughly described and explained. The explanation covers both the spiritual meanings so you can use the card for meditation and spiritual development and how to interpret the card when you are giving a reading. For example, when the seven of Wands is upright, it means financial gain or success. When reversed, it means you should consider this a warning not to hesitate. The two of Swords means friendship, union, or alliance unless it is reversed, in which case it means deceit, disloyalty, falsehood, or disorder. The High Priestess means wisdom, serenity, knowledge, and understanding when upright. If reversed, it means superficial knowledge or ignorance. This book is that straightforward and that easy.Of course, there's more to a reading than just knowing the meanings of the cards. You also need a format in which to associate the meanings of the cards. This is called the "layout" or "spread." The book gives three different spreads. It reveals how the spreads are used and then gives sample readings so you can learn by example.This is the ideal introduction to the Tarot for people who want to learn how to use this divinatory system. Get a deck and this book, and you can be reading the Tarot in no time!</dc:description>
+        <dc:title>Tarot for Beginners: An Easy Guide to Understanding &#38; Interpreting the Tarot (For Beginners)</dc:title>
+        <book:authoredBy>P. Scott Hollander</book:authoredBy>
+        <book:isbn>1567183638</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/0E956167-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a1577480937">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Barbour Pub Inc</foaf:name>
+        </publishedBy>
+        <upc>9781577480938</upc>
+        <uuid>AB704AD2-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>From America's foremost authority on money matters comes this keepsake book containing Scriptural insights on more than 200 topics from abundance to worry.</dc:description>
+        <dc:title>Dollars &#38; Sense: Bible Wisdom for the Faithful Steward</dc:title>
+        <book:authoredBy>Larry Burkett
+Adeline Griffith</book:authoredBy>
+        <book:isbn>1577480937</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/AB704AD2-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a158005031X">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Seal Press (WA)</foaf:name>
+        </publishedBy>
+        <upc>9781580050319</upc>
+        <uuid>FE3A934C-D495-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description>Tofu casseroles, communes, clothing-optional kindergarten, antiwar protests - these are just a few of the hallmarks of a counterculture childhood. What became of kids who had been denied meat, exposed to free love, and given nouns for names? In Wild Child, daughters of the hippie generation speak about the legacy of their childhoods. The writers present a rearview mirror to contemporary culture; with an eye on the past they remind us that there is more than one path through the present. Contributors include Lisa Michaels (Split) and Ariel Gore (Hip Mama).</dc:description>
+        <dc:title>Wild Child: Girlhoods in the Counterculture</dc:title>
+        <book:authoredBy>Moon Zappa
+Chelsea Cain
+Moon Unit Zappa</book:authoredBy>
+        <book:isbn>158005031X</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/FE3A934C-D495-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a1885705026">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Prometheus Nemesis Book Co Inc</foaf:name>
+        </publishedBy>
+        <upc>9781885705020</upc>
+        <uuid>44794666-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>Please Understand Me II: Temperament, Character, Intelligence</dc:title>
+        <book:authoredBy>David Keirsey</book:authoredBy>
+        <book:isbn>1885705026</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/44794666-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <book:Book rdf:about="http://crschmidt.net/library/books#a1890159018">
+        <publishedBy rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.hackcraft.net/bookrdf/vocab/0_1/Publishser"/>
+            <foaf:name>Greenery Press (CA)</foaf:name>
+        </publishedBy>
+        <upc>9781890159016</upc>
+        <uuid>1BAA323A-D48F-11D9-844E-000D93ACBFDE</uuid>
+        <dc:description></dc:description>
+        <dc:title>The Ethical Slut: A Guide to Infinite Sexual Possibilities</dc:title>
+        <book:authoredBy>Dossie Easton
+Catherine A. Liszt</book:authoredBy>
+        <book:isbn>1890159018</book:isbn>
+        <foaf:depiction rdf:resource="http://crschmidt.net/library/images/1BAA323A-D48F-11D9-844E-000D93ACBFDE"/>
+    </book:Book>
+
+    <Library rdf:about="http://crschmidt.net/library/books#library">
+        <items rdf:parseType="Resource">
+            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0060959843"/>
+            <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0024199214"/>
+                <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a083844573X"/>
+                    <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0743456122"/>
+                        <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0673525120"/>
+                            <rdf:rest rdf:parseType="Resource">
+                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a1567183638"/>
+                                <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a1890159018"/>
+                                    <rdf:rest rdf:parseType="Resource">
+                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a034542008X"/>
+                                        <rdf:rest rdf:parseType="Resource">
+                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0805066691"/>
+                                            <rdf:rest rdf:parseType="Resource">
+                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140188479"/>
+                                                <rdf:rest rdf:parseType="Resource">
+                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0393322572"/>
+                                                    <rdf:rest rdf:parseType="Resource">
+                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679735798"/>
+                                                        <rdf:rest rdf:parseType="Resource">
+                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a1885705026"/>
+                                                            <rdf:rest rdf:parseType="Resource">
+                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0822327708"/>
+                                                                <rdf:rest rdf:parseType="Resource">
+                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679741011"/>
+                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a088295041X"/>
+                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0618249060"/>
+                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a096265342X"/>
+                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140369260"/>
+                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140266534"/>
+                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0671638106"/>
+                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0671770063"/>
+                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0767410033"/>
+                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a067151928X"/>
+                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0874552427"/>
+                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a067102762X"/>
+                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0684832674"/>
+                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0316284955"/>
+                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679779159"/>
+                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0446391735"/>
+                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679785892"/>
+                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a1577480937"/>
+                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0740704818"/>
+                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140445587"/>
+                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0553380958"/>
+                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a087113375X"/>
+                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a1400032903"/>
+                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a158005031X"/>
+                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0760720509"/>
+                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0812092813"/>
+                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0394708652"/>
+                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0684834421"/>
+                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0940208156"/>
+                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0316779032"/>
+                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0691070547"/>
+                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0070468613"/>
+                                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0874515947"/>
+                                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0374522758"/>
+                                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0877799148"/>
+                                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0801486076"/>
+                                                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679721037"/>
+                                                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0807846066"/>
+                                                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0804002800"/>
+                                                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a015602943X"/>
+                                                                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0553381350"/>
+                                                                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0452281768"/>
+                                                                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140296476"/>
+                                                                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0688142346"/>
+                                                                                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0669388130"/>
+                                                                                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0679736883"/>
+                                                                                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0321023870"/>
+                                                                                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0231125992"/>
+                                                                                                                                                                                                                                                                <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                                    <rdf:first rdf:resource="http://crschmidt.net/library/books#a0375725784"/>
+                                                                                                                                                                                                                                                                    <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                                        <rdf:first rdf:resource="http://crschmidt.net/library/books#a0684818248"/>
+                                                                                                                                                                                                                                                                        <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                                            <rdf:first rdf:resource="http://crschmidt.net/library/books#a0140196013"/>
+                                                                                                                                                                                                                                                                            <rdf:rest rdf:parseType="Resource">
+                                                                                                                                                                                                                                                                                <rdf:first rdf:resource="http://crschmidt.net/library/books#a0385720181"/>
+                                                                                                                                                                                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                            </rdf:rest>
+                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                    </rdf:rest>
+                                                                                                                                                                </rdf:rest>
+                                                                                                                                                            </rdf:rest>
+                                                                                                                                                        </rdf:rest>
+                                                                                                                                                    </rdf:rest>
+                                                                                                                                                </rdf:rest>
+                                                                                                                                            </rdf:rest>
+                                                                                                                                        </rdf:rest>
+                                                                                                                                    </rdf:rest>
+                                                                                                                                </rdf:rest>
+                                                                                                                            </rdf:rest>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:rest>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:rest>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:rest>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:rest>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:rest>
+                                                                                </rdf:rest>
+                                                                            </rdf:rest>
+                                                                        </rdf:rest>
+                                                                    </rdf:rest>
+                                                                </rdf:rest>
+                                                            </rdf:rest>
+                                                        </rdf:rest>
+                                                    </rdf:rest>
+                                                </rdf:rest>
+                                            </rdf:rest>
+                                        </rdf:rest>
+                                    </rdf:rest>
+                                </rdf:rest>
+                            </rdf:rest>
+                        </rdf:rest>
+                    </rdf:rest>
+                </rdf:rest>
+            </rdf:rest>
+        </items>
+        <foaf:maker rdf:resource="http://crschmidt.net/foaf.rdf#crschmidt"/>
+    </Library>
+</rdf:RDF>

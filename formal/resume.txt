@@ -6,7 +6,7 @@ crschmidt@crschmidt.net
 
 Employment History:
 
-Software Engineer
+Principal Software Engineer (formerly: Senior Software Engineer)
 Nokia                                                   April 2010-Present
 Work with Search Quality team to evaluate and improve quality of Local Search.
 Developed and maintained a tool for accepting work from primarily unskilled

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY cyc "http://www.cyc.com/2004/06/04/cyc#">
+  <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY dc "http://purl.org/dc/elements/1.1/">
+  <!ENTITY dcterm "http://purl.org/dc/terms/">
+  <!ENTITY wot "http://xmlns.com/wot/0.1/">
+  <!ENTITY cc "http://web.resource.org/cc/">
+  <!ENTITY wn "http://xmlns.com/wordnet/1.6/">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY irc "http://crschmidt.net/ns/irc#">
+]>
+
+
+
+<rdf:RDF
+  xmlns:rdf="&rdf;"
+  xmlns:rdfs="&rdfs;"
+  xmlns:foaf="&foaf;"
+  xmlns:wot="&wot;"
+  xmlns:dc="&dc;"
+  xmlns:owl="&owl;"
+  xmlns:dcterm="&dcterm;"
+  xmlns:cc="&cc;"
+  xmlns:xsd="&xsd;"> 
+
+<owl:Ontology rdf:about="">
+  <dc:title xml:lang="en">IRC RFC1459 Ontology</dc:title> 
+  <dc:description xml:lang="en">An ontology to describe an IRC network based on RFC1459 and "irc: URL scheme", an IETF draft by Mandar Mirashi.</dc:description>
+  <dc:date>2004-12-05</dc:date> 
+  <dc:identifier>&irc;</dc:identifier> 
+  <dcterm:isVersionOf rdf:resource="&irc;" /> 
+  <dc:author>Daniel O'Connor</dc:author>
+  <dc:author>Christopher Schmidt</dc:author> 
+  <foaf:maker rdf:nodeID="doconnor" /> 
+  <foaf:maker rdf:nodeID="crschmidt" />
+  <dc:rights>Copyright 2004 Christopher Schmidt and Daniel O'Connor, Some Rights Reserved</dc:rights> 
+
+  <dcterm:hasFormat> 
+    <rdf:Description rdf:about="&irc;"> 
+      <dc:format> 
+        <dcterm:IMT> 
+          <rdf:value>application/rdf+xml</rdf:value> 
+          <rdfs:label xml:lang="en">RDF</rdfs:label> 
+        </dcterm:IMT> 
+      </dc:format>
+    </rdf:Description>
+  </dcterm:hasFormat>
+
+  <cc:license rdf:resource="http://creativecommons.org/licenses/by/1.0/" /> 
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" /> 
+
+</owl:Ontology> 
+
+<cc:Work rdf:about="" /> 
+
+<foaf:Person rdf:nodeID="doconnor"> 
+  <foaf:name>Daniel O'Connor</foaf:name>
+  <foaf:mbox rdf:resource="mailto:daniel.oconnor@gmail.com" />
+  <foaf:mbox_sha1sum>722555ce710b1ccafe5f47c5984306368b5a36f5</foaf:mbox_sha1sum>
+  <foaf:mbox_sha1sum>ad034c471b7d45488cfa12016933edf70dd71b1f</foaf:mbox_sha1sum>
+  <foaf:mbox_sha1sum>89ea5218e57343432063eec37429c04fbb02a6ae</foaf:mbox_sha1sum>
+  <foaf:mbox_sha1sum>3feee6cfe1a489728d40141c45d875b01e85369a</foaf:mbox_sha1sum>
+  <foaf:mbox_sha1sum>65322970430331e2b9b320e710a6ebe316a08534</foaf:mbox_sha1sum>
+  <rdfs:seeAlso rdf:resource="http://www.ahsonline.com.au/dod/FOAF.rdf" /> 
+</foaf:Person>
+
+<foaf:Person rdf:nodeID="crschmidt">
+  <foaf:name>Christopher Schmidt</foaf:name>
+  <foaf:mbox_sha1sum>d1235763342ad472a26e0cc3b2cc01268c98690d</foaf:mbox_sha1sum>
+  <rdfs:seeAlso rdf:resource="http://crschmidt.net/foaf.rdf" />
+</foaf:Person>
+
+<cc:License rdf:about="http://creativecommons.org/licenses/by/1.0/"> 
+  <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction" /> 
+  <cc:permits rdf:resource="http://web.resource.org/cc/Distribution" /> 
+  <cc:requires rdf:resource="http://web.resource.org/cc/Notice" /> 
+  <cc:requires rdf:resource="http://web.resource.org/cc/Attribution" /> 
+  <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" /> 
+</cc:License> 
+
+
+
+
+<!-- Specific classes -->
+
+<owl:Class rdf:ID="Network">
+  <rdfs:label xml:lang="en">IRC Network</rdfs:label> 
+  <rdfs:comment xml:lang="en">A collection of IRC Servers linked together to form a network.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Server">
+  <rdfs:label xml:lang="en">IRC Server</rdfs:label> 
+  <rdfs:comment xml:lang="en">
+   The server forms the backbone of IRC, providing a point to which 
+   clients may connect to to talk to each other, and a point for other
+   servers to connect to, forming an IRC network.  The only network
+   configuration allowed for IRC servers is that of a spanning tree 
+   where each server acts as a central node for the rest of the
+   net it sees.
+   </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Client">
+  <rdfs:label xml:lang="en">IRC Client</rdfs:label> 
+  <rdfs:subClassOf rdf:resource="&foaf;Agent" />
+  <rdfs:comment xml:lang="en">
+   A client is anything connecting to a server that is not another
+   server.  In addition to the nickname, all servers must have the
+   following information about all clients: the real name of the host
+   that the client is running on, the username of the client on that
+   host, and the server to which the client is connected.
+  </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="IRCOperator">
+  <rdfs:subClassOf rdf:resource="#Client" />
+  <rdfs:label xml:lang="en">IRC Operator</rdfs:label>
+  <rdfs:comment xml:lang="en">An agent designated with network maintainence for an IRC Network / Server.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="ChannelOperator">
+  <rdfs:subClassOf rdf:resource="#Client" />
+
+  <rdfs:subClassOf>
+    <owl:Restriction> 
+      <owl:onProperty rdf:resource="#channel"/>
+      <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </owl:Restriction> 
+  </rdfs:subClassOf>
+
+  <rdfs:label xml:lang="en">IRC Channel Operator</rdfs:label>
+  <rdfs:comment xml:lang="en">An agent who maintains a channel.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Channel">
+  <rdfs:label xml:lang="en">IRC Channel</rdfs:label> 
+  <rdfs:comment xml:lang="en">
+   A channel is a named group of one or more clients which will all
+   receive messages addressed to that channel.  The channel is created
+   implicitly when the first client joins it, and the channel ceases to
+   exist when the last client leaves it.  While channel exists, any
+   client can reference the channel using the name of the channel.
+  </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Person">
+  <rdfs:subClassOf rdf:resource="#Client" />
+  <owl:equivalentClass rdf:resource="&foaf;Person" />
+  <rdfs:label xml:lang="en">Person</rdfs:label>
+  <rdfs:comment xml:lang="en">A flesh and blood person.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Bot">
+  <rdfs:subClassOf rdf:resource="#Client" />
+  <rdfs:label xml:lang="en">Bot</rdfs:label>
+  <rdfs:comment xml:lang="en">An program or application on IRC that is not a person.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Message">
+  <rdfs:label xml:lang="en">Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC message between clients, servers, or networks.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="PrivateMessage">
+  <rdfs:subClassOf rdf:resource="#Message" />
+  <rdfs:label xml:lang="en">Private Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC message between only two irc entities. For instance, an irc:PrivateMessage could be sent between an irc:Client and an irc:Channel.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Notice">
+  <rdfs:subClassOf rdf:resource="#Message" />
+  <rdfs:label xml:lang="en">Notice Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC message between irc entities.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Join">
+  <rdfs:subClassOf rdf:resource="#Message" />
+  <rdfs:label xml:lang="en">Join Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC agent has joined a channel</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Part">
+  <rdfs:subClassOf rdf:resource="#Message" />
+  <rdfs:label xml:lang="en">Part Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC agent has left a channel</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID="Quit">
+  <rdfs:subClassOf rdf:resource="#Message" />
+  <rdfs:label xml:lang="en">Quit Message</rdfs:label>
+  <rdfs:comment xml:lang="en">An IRC agent has left a server</rdfs:comment>
+</owl:Class>
+
+<!-- irc:Server Properties -->
+<owl:ObjectProperty rdf:ID="link"> 
+  <rdfs:domain rdf:resource="#Server" />
+  <rdfs:subPropertyOf rdf:resource="#connectedTo" />
+  <rdfs:label xml:lang="en">linked to</rdfs:label>
+  <rdfs:comment xml:lang="en">A peer server.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="info"> 
+  <rdfs:domain rdf:resource="#Server" />
+  <owl:equivalentProperty rdf:resource="&dc;description" />
+  <rdfs:label xml:lang="en">info</rdfs:label>
+  <rdfs:comment xml:lang="en">Information which describes
+   the server: its version, when it was compiled, the patchlevel, when
+   it was started, and any other miscellaneous information which may be
+   considered to be relevant.
+  </rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="motd"> 
+  <rdfs:domain rdf:resource="#Server" />
+  <rdfs:label xml:lang="en">message of the day</rdfs:label>
+  <rdfs:comment xml:lang="en">Information about the specific server shown to most incoming clients.</rdfs:comment> 
+</owl:ObjectProperty>
+
+
+<!-- irc:Client Properties -->
+
+<owl:ObjectProperty rdf:ID="nickname"> 
+  <rdf:type rdf:resource="&owl;InverseFunctionalProperty" />
+  <rdfs:domain rdf:resource="#Client" />
+  <rdfs:range rdf:resource="&xsd;string" />
+  <owl:equivalentProperty rdf:resource="&foaf;nick" />
+
+  <rdfs:label xml:lang="en">nickname</rdfs:label> 
+  <rdfs:comment xml:lang="en">Each client is distinguished from other clients by a unique
+   nickname having a maximum length of nine (9) characters.  See the
+   protocol grammar rules for what may and may not be used in a
+   nickname.</rdfs:comment>
+
+  <owl:cardinality>1</owl:cardinality>
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hostname"> 
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Client" />
+  <rdfs:range rdf:resource="&xsd;string" />
+
+  <rdfs:label xml:lang="en">hostname</rdfs:label> 
+  <rdfs:comment xml:lang="en">The real name of the host that the client is running on.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="username">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Client" />
+  <rdfs:range rdf:resource="&xsd;string" />
+
+  <rdfs:label xml:lang="en">username</rdfs:label> 
+  <rdfs:comment xml:lang="en">The username of the client on it's host.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="away">
+  <rdfs:domain rdf:resource="#Client" />
+
+  <rdfs:label xml:lang="en">away</rdfs:label>
+  <rdfs:comment xml:lang="en">An away message, if applicable.</rdfs:comment>
+  <owl:maxCardinality>1</owl:maxCardinality>
+</owl:ObjectProperty>
+
+<!-- irc:Channel Properties -->
+<owl:ObjectProperty rdf:ID="topic">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain rdf:resource="#Channel" />
+  <rdfs:label xml:lang="en">channel topic</rdfs:label> 
+  <rdfs:comment xml:lang="en">The topic for an IRC Channel</rdfs:comment> 
+  <owl:equivalentProperty rdf:resource="&foaf;topic" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="title">
+  <rdfs:domain rdf:resource="#Channel" />
+  <rdfs:label xml:lang="en">channel title</rdfs:label> 
+  <rdfs:comment xml:lang="en">
+   Channels names are strings (beginning with a '&amp;' or '#' character) of
+   length up to 200 characters.  Apart from the the requirement that the
+   first character being either '&amp;' or '#'; the only restriction on a
+   channel name is that it may not contain any spaces (' '), a control G
+   (^G or ASCII 7), or a comma (',' which is used as a list item
+   separator by the protocol).
+  </rdfs:comment>
+  <owl:equivalentProperty rdf:resource="&dc;title" />
+</owl:ObjectProperty>
+
+<!-- Message Properties -->
+<owl:ObjectProperty rdf:ID="from"> 
+  <rdfs:domain rdf:resource="#Message" />
+
+  <rdfs:label xml:lang="en">from</rdfs:label> 
+  <rdfs:comment xml:lang="en">The sender (creator) of a message.</rdfs:comment> 
+
+  <owl:equivalentClass rdf:resource="&foaf;maker" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="to"> 
+  <rdfs:domain rdf:resource="#Message" />
+
+  <rdfs:label xml:lang="en">to</rdfs:label> 
+  <rdfs:comment xml:lang="en">The target (reciever) of a message.</rdfs:comment> 
+</owl:ObjectProperty>
+
+
+<!-- Global Properties -->
+<owl:ObjectProperty rdf:ID="client">
+  <rdfs:subPropertyOf rdf:resource="#connectedTo" />
+  <rdfs:range rdf:resource="#Client" />
+  <rdfs:label xml:lang="en">Client</rdfs:label> 
+  <rdfs:comment xml:lang="en">A client in a channel or on a server.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="network">
+  <rdfs:subPropertyOf rdf:resource="#connectedTo" />
+  <rdfs:range rdf:resource="#Network" />
+  <rdfs:label xml:lang="en">network</rdfs:label> 
+  <rdfs:comment xml:lang="en">The network something is connected to.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="server">
+  <rdfs:range rdf:resource="#Server" />
+  <rdfs:subPropertyOf rdf:resource="#connectedTo" />
+  <rdfs:label xml:lang="en">server</rdfs:label> 
+  <rdfs:comment xml:lang="en">The specific server which something is connected to.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="channel"> 
+  <rdfs:domain rdf:resource="#Network" />
+  <rdfs:domain rdf:resource="#Server" />
+  <rdfs:domain rdf:resource="#Message" />
+  <rdfs:range rdf:resource="#Channel" />
+
+  <rdfs:label xml:lang="en">channel</rdfs:label>
+  <rdfs:comment xml:lang="en">A channel that is on the Network.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="connectedTo">
+  <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+  <rdfs:label xml:lang="en">connected to</rdfs:label> 
+  <rdfs:comment xml:lang="en">The specific server which something is connected to.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="software">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:label xml:lang="en">software</rdfs:label> 
+  <rdfs:comment xml:lang="en">The software a server or client is running.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="modes"> 
+  <rdfs:domain rdf:resource="#Channel" />
+  <rdfs:domain rdf:resource="#Client" />
+  <rdfs:label xml:lang="en">modes</rdfs:label> 
+  <rdfs:comment xml:lang="en">A string of all modes for a channel or user.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="operator"> 
+  <rdfs:domain rdf:resource="#Channel" />
+  <rdfs:domain rdf:resource="#Server" />
+  <rdfs:domain rdf:resource="#Network" />
+  <rdfs:range rdf:resource="#Client" />
+  <rdfs:label xml:lang="en">operator</rdfs:label> 
+  <rdfs:comment xml:lang="en">A Channel, Server or Network operator.</rdfs:comment> 
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="chatEventList">
+  <rdfs:range rdf:resource="&rdf;Seq"/>
+  <rdfs:label xml:lang="en">Chat Events</rdfs:label> 
+  <rdfs:comment xml:lang="en">A series of sequential events, messages, etc in a Sequenced List.</rdfs:comment> 
+</owl:ObjectProperty>
+
+</rdf:RDF>  

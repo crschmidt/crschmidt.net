@@ -1,0 +1,106 @@
+<!-- Processed by Id: cwm.py,v 1.189 2006/08/02 16:59:14 syosi Exp -->
+
+<rdf:RDF xmlns="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://crschmidt.net/ns/list">
+        <comment>File and directory attributes ontology</comment>
+        <label>list</label>
+    </owl:Ontology>
+
+    <Class rdf:about="http://crschmidt.net/ns/list#Directory">
+        <comment>The class of generic directories, online or in a filesystem</comment>
+        <label>Directory</label>
+    </Class>
+
+    <Class rdf:about="http://crschmidt.net/ns/list#File">
+        <comment>The class of generic files, online or on a filesystem</comment>
+        <label>File</label>
+    </Class>
+
+    <Datatype rdf:about="http://crschmidt.net/ns/list#bytes">
+        <comment>A bytes literal datatype</comment>
+        <label>bytes</label>
+    </Datatype>
+
+    <rdf:Property rdf:about="http://crschmidt.net/ns/list#changefrequency">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <comment>Frequency with which a page changes. One of: "always", "hourly", 
+        "daily", "weekly", "monthly", "yearly", "never".</comment>
+        <label>change frequency</label>
+        <range rdf:parseType="Resource">
+            <owl:oneOf rdf:parseType="Resource">
+                <rdf:first>always</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                    <rdf:first>daily</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                        <rdf:first>hourly</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                            <rdf:first>monthly</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                                <rdf:first>never</rdf:first>
+                                <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first>weekly</rdf:first>
+                                    <rdf:rest rdf:parseType="Resource">
+                                        <rdf:first>yearly</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:rest>
+                                </rdf:rest>
+                            </rdf:rest>
+                        </rdf:rest>
+                    </rdf:rest>
+                </rdf:rest>
+            </owl:oneOf>
+        </range>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://crschmidt.net/ns/list#entry">
+        <comment>Relates a subject directory to a file entry object</comment>
+        <domain rdf:resource="http://crschmidt.net/ns/list#Directory"/>
+        <label>entry</label>
+        <range rdf:resource="http://crschmidt.net/ns/list#File"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://crschmidt.net/ns/list#priority">
+        <comment>float value from 0 to 1, describing a priority with which search 
+         engines should rate the URL against other locations in the same 
+         domain.</comment>
+        <label>priority</label>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://crschmidt.net/ns/list#size">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <comment>Relates a file object to a literal size object, in list:bytes </comment>
+        <domain rdf:resource="http://crschmidt.net/ns/list#File"/>
+        <label>size</label>
+        <range rdf:resource="http://crschmidt.net/ns/list#bytes"/>
+    </rdf:Property>
+
+    <rdf:Description>
+        <owl:oneOf rdf:parseType="Resource">
+            <rdf:first>always</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+                <rdf:first>daily</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                    <rdf:first>hourly</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                        <rdf:first>monthly</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                            <rdf:first>never</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                                <rdf:first>weekly</rdf:first>
+                                <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first>yearly</rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </rdf:rest>
+                            </rdf:rest>
+                        </rdf:rest>
+                    </rdf:rest>
+                </rdf:rest>
+            </rdf:rest>
+        </owl:oneOf>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataRange"/>
+    </rdf:Description>
+</rdf:RDF>

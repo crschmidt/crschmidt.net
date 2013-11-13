@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://crschmidt.net/ns/list#> .
+
+<http://crschmidt.net/ns/list> a owl:Ontology; 
+   rdfs:label "list"; 
+   rdfs:comment "File and directory attributes ontology" .
+
+:Directory a rdfs:Class; 
+   rdfs:label "Directory"; 
+   rdfs:comment "The class of generic directories, online or in a filesystem" .
+
+:entry a rdf:Property; 
+   rdfs:domain :Directory; 
+   rdfs:range :File; 
+   rdfs:label "entry"; 
+   rdfs:comment "Relates a subject directory to a file entry object" .
+
+:File a rdfs:Class; 
+   rdfs:label "File"; 
+   rdfs:comment "The class of generic files, online or on a filesystem" .
+
+:size a rdf:Property, owl:DatatypeProperty; 
+   rdfs:domain :File; 
+   rdfs:range :bytes; 
+   rdfs:label "size"; 
+   rdfs:comment 
+     """Relates a file object to a literal size object, in list:bytes """ .
+
+:bytes a rdfs:Datatype; 
+   rdfs:label "bytes"; 
+   rdfs:comment "A bytes literal datatype" .
+
+:priority a rdf:Property; 
+   rdfs:label "priority"; 
+   rdfs:comment 
+      """float value from 0 to 1, describing a priority with which search 
+         engines should rate the URL against other locations in the same 
+         domain.""" .
+
+:changefrequency a rdf:Property, owl:DatatypeProperty; 
+   rdfs:label "change frequency"; 
+   rdfs:comment 
+     """Frequency with which a page changes. One of: "always", "hourly", 
+        "daily", "weekly", "monthly", "yearly", "never"."""; 
+   rdfs:range [ 
+      a owl:DataRange; 
+      owl:oneOf ("always" "hourly" "daily" "weekly" "monthly" "yearly" "never")
+   ] .
+
+# EOF

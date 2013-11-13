@@ -1,0 +1,9 @@
+Has one property so far:
+
+fif:via
+domain: rev:Review
+range: rdf:resource
+label: via
+comment: Annotates the referer or other resource through which the review 
+         arrived. Useful for annotation of, for example, a referer through
+         which an in-feed form arrived.

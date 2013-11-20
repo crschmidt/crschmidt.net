@@ -18,6 +18,7 @@
             <li>Email: <a href="mailto:crschmidt@crschmidt.net">crschmidt@crschmidt.net</a></li>
             <li>AIM: cr5chmidt</li>
             <li>Skype: cr5chmidt</li>
+            <li><a href="/formal/resume.txt">Resume</a></li>
         </ul>
 <?php
 

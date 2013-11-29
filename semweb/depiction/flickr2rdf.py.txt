@@ -1,0 +1,53 @@
+#!/usr/bin/python
+import sys, re 
+import RDF
+import urllib
+import xml.dom.minidom as minidom
+API_KEY="7fbed205a8e56220ab8877e1a11d0671"
+def get_rdf(id):
+    m = RDF.Model()
+    p = RDF.Parser()
+    url = "http://www.kanzaki.com/works/2005/imgdsc/flickr2rdf?%s" % urllib.urlencode({"u": "http://flickr.com/photos/crschmidt/%s/" % id })
+    u = urllib.urlopen(url)
+    data = u.read()
+    data = re.sub('.jpg', '_o.jpg', data)
+    p.parse_string_into_model(m, data, "http://crschmidt.net/albums/flickr/%s" % id)
+    s = m.find_statements(RDF.Statement(None, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri("http://xmlns.com/foaf/0.1/Image")))
+    photo = s.current().subject
+    photo = photo.uri
+    uri = str(photo)
+    url = "http://www.kanzaki.com/test/exif2rdf?%s" % urllib.urlencode({"u":uri})
+    u = urllib.urlopen(url)
+    data = u.read()
+    data = re.sub('<!--(?:[^-]+|-(?!-))+-->', '', data)
+    p.parse_string_into_model(m, data, "http://crschmidt.net/albums/flickr/%s" % id)
+    statements = m.find_statements(RDF.Statement(None, RDF.Uri("http://xmlns.com/foaf/0.1/topic"), RDF.Uri("http://www.flickr.com/photos/tags/geotagged/")))
+    if statements.current():
+        geo = {}
+        url = "http://www.flickr.com/services/rest/?method=flickr.tags.getListPhoto&api_key=%s&photo_id=%s" % (API_KEY, id)
+        u = urllib.urlopen(url)
+        doc = minidom.parseString(u.read())
+        tags = doc.getElementsByTagName("tag")
+        m.append(RDF.Statement(RDF.Uri(photo), RDF.Uri("http://purl.org/dc/terms/spatial"), RDF.Uri("http://crschmidt.net/flickr/%s#location" % id)))
+        for i in tags:
+            v = i.attributes.get("raw").value
+            if (v.startswith("geo") and ("=" in v)):
+                v = v[4:]
+                lhs, rhs = v.split("=")
+                geo[lhs] = rhs
+                url = "http://crschmidt.net/flickr/%s#location" % id
+                p = "http://www.w3.org/2003/01/geo/wgs84_pos#%s" % lhs
+                m.append(RDF.Statement(RDF.Uri(str(url)), RDF.Uri(str(p)), RDF.Node(str(rhs))))
+    s = RDF.RDFXMLSerializer()
+    s.set_namespace("foaf", "http://xmlns.com/foaf/0.1/")
+    s.set_namespace("dc", "http://purl.org/dc/elements/1.1/")
+    s.set_namespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
+    s.set_namespace("whois", "http://www.kanzaki.com/ns/whois#")
+    s.set_namespace("imgreg", "http://www.w3.org/2004/02/image-regions#")
+    s.set_namespace("image", "http://jibbering.com/vocabs/image/#")
+    s.set_namespace("exif", "http://www.kanzaki.com/ns/exif#")
+    s.set_namespace("geo", "http://www.w3.org/2003/01/geo/wgs84_pos#")
+    s.set_namespace("dcterms", "http://purl.org/dc/terms/")
+    print s.serialize_model_to_string(m)
+if __name__ == "__main__":   
+   get_rdf(sys.argv[1]) 

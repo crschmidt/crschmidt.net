@@ -1,0 +1,274 @@
+from rdflib.URIRef import URIRef
+from rdflib.Literal import Literal
+from rdflib.BNode import BNode
+from rdflib.Namespace import Namespace
+from rdflib.constants import TYPE
+
+from rdflib.TripleStore import TripleStore
+
+def add_person_to_model(person, model, type, url):
+     if person.has_key('sha'):
+        p = BNode(value="_:p%s"%person['sha'][0])
+     else:
+        p = BNode()
+     props = get_props()
+     model.add((URIRef(url), type, p))
+     for prop in props.keys():
+         if person.has_key(prop):
+             for i in person[prop]:
+                 if props[prop][0] == "uri":
+                     node = URIRef(i)
+                 if props[prop][0] == "literal":
+                     node = Literal(i)
+                 model.add((p, URIRef(props[prop][1]), node))
+     model.add((p, URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), URIRef("http://xmlns.com/foaf/0.1/Person")))
+
+def get_props():
+     return {
+             "homepage":("uri", "http://xmlns.com/foaf/0.1/homepage"), 
+             "sha":("literal","http://xmlns.com/foaf/0.1/mbox_sha1sum"),
+             "nick":("literal", "http://xmlns.com/foaf/0.1/nick"), 
+             "name":("literal", "http://xmlns.com/foaf/0.1/name"),
+             "weblog":("uri","http://xmlns.com/foaf/0.1/weblog")
+            }
+def get_model():
+    model = TripleStore()
+    model.load("file:/home/httpd/htdocs/foaf.rdf")
+    return model
+def get_words():
+    file = open("wordnet.msh", "rb")
+    import cPickle as pickle
+    words = pickle.load(file)
+    file.close()
+    return words
+def get_people(name_or_nick):
+    model = get_model()
+    sources = ""
+    FOAF = Namespace("http://xmlns.com/foaf/0.1/")
+    sources = model.subjects(FOAF['name'], Literal(name_or_nick))
+    if not sources:
+        sources = model.subjects(FOAF['nick'], Literal(name_or_nick))
+    people = dict()
+    for source in sources:
+        people[source] = {}
+        props = get_props()
+        for prop in props.keys():
+            people[source][prop] = list()
+            available = model.objects(source, URIRef(props[prop][1]))
+            for i in available:
+                people[source][prop].append(i)
+    if len(people) < 1:
+        sources = model.subjects(FOAF['nick'], Literal(name_or_nick))
+        for source in sources:
+            people[source] = {}
+            props = get_props()
+            for prop in props.keys():
+                people[source][prop] = list()
+                available = model.objects(source, URIRef(props[prop][1]))
+                for i in available:
+                    people[source][prop].append(i)
+    return people
+
+if __name__ == "__main__":  
+    mem_model = TripleStore()
+    wordlist = get_words()
+    FOAF = Namespace("http://xmlns.com/foaf/0.1/")
+    GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
+    RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+    DC = Namespace("http://purl.org/dc/elements/1.1/")
+    CYC = Namespace("http://opencyc.sourceforge.net/daml/cyc.daml#")
+    print "Image Annotation Tool"
+    print "Enter the URI of a photo to annotate:"
+    uri = raw_input("> ")
+    mem_model.add((URIRef(uri), URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), URIRef("http://xmlns.com/foaf/0.1/Image")))
+    print "Should I add a thumbnail for this image, by adding '.sized' before the extension?"
+    thumbnail = raw_input("> ")
+    if thumbnail:
+        thumb = "%ssized.%s"%(uri[:-3],uri[-3:])
+        mem_model.add((URIRef(uri), FOAF['thumbnail'], URIRef(thumb)))
+    print "Enter a title for the photo:"
+    title = raw_input("> ")
+    mem_model.add((URIRef(uri), URIRef("http://purl.org/dc/elements/1.1/title"), Literal(title)))
+    print "Enter a description for the photo:"
+    description = raw_input("> ")
+    mem_model.add((URIRef(uri), URIRef("http://purl.org/dc/elements/1.1/description"), Literal(description)))
+    while 1:
+        print "Photo Creator?"
+        person = raw_input("> ")
+        people = get_people(person)
+        count = 0
+        people_array = {}
+        if not person: break
+        if len(people) > 1:
+          for i in people.keys():
+              count+=1
+              people_array[str(count)] = i
+              print "%s: %s"%(count,people[i])
+          if count:
+              person = raw_input("> ")
+              if person:
+                  add_person_to_model(people[people_array[person]], mem_model, URIRef("http://xmlns.com/foaf/0.1/maker"), uri)
+                  add_person_to_model(people[people_array[person]], mem_model, URIRef("http://purl.org/dc/elements/1.1/creator"), uri)
+                  break
+              else:
+                 print "Okay: I won't be adding anyone this time around. Try again?"
+          elif not count and person: 
+              print "No person with that name or nickname found."
+          else:
+             break
+        else:
+            add_person_to_model(people[people.keys()[0]], mem_model, URIRef("http://xmlns.com/foaf/0.1/maker"), uri)
+            add_person_to_model(people[people.keys()[0]], mem_model, URIRef("http://purl.org/dc/elements/1.1/creator"), uri)
+            break
+    while 1:
+        print "Metadata Creator?"
+        person = raw_input("> ")
+        people = get_people(person)
+        count = 0
+        people_array = {}
+        if not person: break
+        if len(people) > 1:
+          for i in people.keys():
+              count+=1
+              people_array[str(count)] = i
+              print "%s: %s"%(count,people[i])
+          if count:
+              person = raw_input("> ")
+              if person:
+                  add_person_to_model(people[people_array[person]], mem_model, URIRef("http://xmlns.com/foaf/0.1/maker"), "")
+                  add_person_to_model(people[people_array[person]], mem_model, URIRef("http://purl.org/dc/elements/1.1/creator"), "")
+                  break
+              else:
+                 print "Okay: I won't be adding anyone this time around. Try again?"
+          elif not count and person: 
+              print "No person with that name or nickname found."
+          else:
+             break
+        else:
+            add_person_to_model(people[people.keys()[0]], mem_model, URIRef("http://xmlns.com/foaf/0.1/maker"), "")
+            add_person_to_model(people[people.keys()[0]], mem_model, URIRef("http://purl.org/dc/elements/1.1/creator"), "")
+            break
+          
+    add_people = 1
+    while(add_people):
+        print "Person?"
+        person = raw_input("> ")
+        if not person: add_people = 0; break
+        people = get_people(person)
+        count = 0
+        people_array = {}
+        if len(people) > 1:
+          for i in people.keys():
+              count+=1
+              people_array[str(count)] = i
+              print "%s: %s"%(count,people[i])
+          if count:
+              person = raw_input("> ")
+              if person:
+                  add_person_to_model(people[people_array[person]], mem_model, URIRef("http://xmlns.com/foaf/0.1/depicts"), uri)
+              else:
+                 print "Okay: I won't be adding anyone this time around. Press enter to complete adding persons depicted in this picture."
+          elif not count and person: 
+              print "No person with that name or nickname found."
+        else:
+            add_person_to_model(people[people.keys()[0]], mem_model, URIRef("http://xmlns.com/foaf/0.1/depicts"), uri)
+
+        if not person:
+            add_people = 0
+    words = 1
+    while(words):
+        print "An item depicted by the image, using a word from wordnet:"
+        word = raw_input("> ")
+        if not word: words = 0; break
+        #count = 0
+        #people_array = {}
+        #if len(people) > 1:
+        #  for i in people.keys():
+        #      count+=1
+        #      people_array[str(count)] = i
+        #      print "%s: %s"%(count,people[i])
+        #  if count:
+        #      person = raw_input("> ")
+        #      if person:
+        #          add_person_to_model(people[people_array[person]], mem_model, URIRef("http://xmlns.com/foaf/0.1/depicts"))
+        #      else:
+        #         print "Okay: I won't be adding anyone this time around. Press enter to complete adding persons depicted in this picture."
+        if not (word.lower() in wordlist):
+              print "No such word found in wordnet. with that name or nickname found."
+        else:
+            mem_model.add((URIRef(uri), URIRef("http://xmlns.com/foaf/0.1/depicts"), URIRef("http://xmlns.com/wn/1.6/%s"%word)))
+        if not word:
+            words = 0
+    print "Geo data: In form of lat long, such as 42.9813 -71.4369, in decimal"
+    geo = raw_input("> ")
+    if geo:
+        geo = geo.split(" ")
+        b = BNode(value="_:point")
+        c = BNode()
+        mem_model.add((b, RDF['type'], GEO['Point']))
+        mem_model.add((b, GEO['lat'], Literal(geo[0])))
+        mem_model.add((b, GEO['long'], Literal(geo[1])))
+        mem_model.add((URIRef(uri), DC['spatial'], c))
+        mem_model.add((c, RDF['type'], GEO['SpatialThing']))
+        mem_model.add((c, CYC['near'], b))
+    
+    b = BNode(value="_:ccagent")
+    print "Photo Copyright Agent Title?"
+    cc_agent = raw_input("> ")
+    if (cc_agent):
+      print "Date for copyright?"
+      cc_date = raw_input("> ")
+    if (cc_agent and cc_date): 
+        mem_model.add((URIRef(uri), URIRef("http://purl.org/dc/elements/1.1/rights"), b))
+        mem_model.add((b, URIRef("http://purl.org/dc/elements/1.1/title"), Literal(cc_agent)))
+        mem_model.add((b, URIRef("http://purl.org/dc/elements/1.1/date"), Literal(cc_date)))
+    print "Metadata Copyright Agent Title?"
+    old_agent = cc_agent
+    cc_agent = raw_input("[type 'same' for same as above] > ")
+    if (cc_agent != 'same' and cc_agent):
+      print "Date for copyright?"
+      cc_date = raw_input("> ")
+    if cc_agent == "same":
+        mem_model.add((URIRef(""), URIRef("http://purl.org/dc/elements/1.1/rights"), b))
+        cc_date = ""
+    b = BNode(value="_:metaccagent")
+    if (cc_agent and cc_date): 
+        mem_model.add((URIRef(""), URIRef("http://purl.org/dc/elements/1.1/rights"), b))
+        mem_model.add((b, URIRef("http://purl.org/dc/elements/1.1/title"), Literal(cc_agent)))
+        mem_model.add((b, URIRef("http://purl.org/dc/elements/1.1/date"), Literal(cc_date)))
+        mem_model.add((URIRef(""), URIRef("http://purl.org/dc/elements/1.1/rights"), b))
+    licenses = {
+      "by":["Attribution 2.0","http://creativecommons.org/licenses/by/2.0/"],
+      "by-nd":["Attribution-NoDerivs 2.0","http://creativecommons.org/licenses/by-nd/2.0/"],
+      "by-nc-nd":["Attribution-NonCommercial-NoDerivs 2.0","http://creativecommons.org/licenses/by-nc-nd/2.0/"],
+      "by-nc":["Attribution-NonCommercial 2.0","http://creativecommons.org/licenses/by-nc/2.0/"],
+      "by-nc-sa":["Attribution-NonCommercial-ShareAlike 2.0","http://creativecommons.org/licenses/by-nc-sa/2.0/"],
+      "by-sa":["Attribution-ShareAlike 2.0","http://creativecommons.org/licenses/by-sa/2.0/"],
+      "nd":["NoDerivs 1.0","http://creativecommons.org/licenses/nd/1.0/"],
+      "nd-nc":["NoDerivs-NonCommercial 1.0","http://creativecommons.org/licenses/nd-nc/1.0/"],
+      "nc":["NonCommercial 1.0","http://creativecommons.org/licenses/nc/1.0/"],
+      "nc-sa":["NonCommercial-ShareAlike 1.0","http://creativecommons.org/licenses/nc-sa/1.0/"],
+      "sa":["ShareAlike 1.0","http://creativecommons.org/licenses/sa/1.0/"],
+      "none":["No license attached",""]  }
+    license_list = { "photo": (uri, "Photo license:"), "meta": ("", "RDF Metadata license:") }
+    for j in license_list:
+        print license_list[j][1]
+        count = 0
+        keys = licenses.keys()
+        keys.sort()
+        for i in keys:
+            count+=1
+            print "%s: %s"%(i, licenses[i][0])
+            licenses[i].append(count)
+        license = raw_input("[by-nc-sa] > ")
+        if not license:
+            license = "by-nc-sa"
+        if license != "none":
+            mem_model.add((URIRef(license_list[j][0]), URIRef("http://web.resource.org/cc/rights"), URIRef(licenses[license][1])))
+    mem_model.prefix_mapping("foaf", "http://xmlns.com/foaf/0.1/")
+    mem_model.prefix_mapping("dc", "http://purl.org/dc/elements/1.1/")
+    mem_model.prefix_mapping("cc", "http://web.resource.org/cc/")
+    mem_model.prefix_mapping("cyc", "http://opencyc.sourceforge.net/daml/cyc.daml#")
+    mem_model.prefix_mapping("geo", "http://www.w3.org/2003/01/geo/wgs84_pos#")
+    mem_model.save("file.rdf")
+    print mem_model.serialize()

@@ -1,0 +1,47 @@
+Image Annotation Tool
+Enter the URI of a photo to annotate:
+> http://crschmidt.net/albums/FAR/100_0102.jpg
+Should I add a thumbnail for this image, by adding '.sized' before the
+extension?
+> y
+Enter a title for the photo:
+> Relaxing
+Enter a description for the photo:
+> Christy and I relax in her dorm room at FAR.
+Photo Creator?
+> crschmidt
+Metadata Creator?
+> crschmidt
+Person?
+> crschmidt
+Person?
+> littledownpour
+Person?
+> 
+An item depicted by the image, using a word from wordnet:
+> 
+Geo data: In form of lat long, such as 42.9813 -71.4369, in decimal
+> 40.10 -88.22         
+Photo Copyright Agent Title?
+> Christopher Schmidt
+Date for copyright?
+> 2004
+Metadata Copyright Agent Title?
+[type 'same' for same as above] > same
+Photo license:
+by: Attribution 2.0
+by-nc: Attribution-NonCommercial 2.0
+by-nc-nd: Attribution-NonCommercial-NoDerivs 2.0
+by-nc-sa: Attribution-NonCommercial-ShareAlike 2.0
+by-nd: Attribution-NoDerivs 2.0
+by-sa: Attribution-ShareAlike 2.0
+nc: NonCommercial 1.0
+nc-sa: NonCommercial-ShareAlike 1.0
+nd: NoDerivs 1.0
+nd-nc: NoDerivs-NonCommercial 1.0
+none: No license attached
+sa: ShareAlike 1.0
+[by-nc-sa] > 
+RDF Metadata license:
+[by-nc-sa] > 
+

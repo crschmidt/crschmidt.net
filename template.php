@@ -35,17 +35,18 @@ $template = <<<TEMPLATE
 	<div><a href="/" style="text-decoration:none; color:#fff"><span style="font-size:1.1em; font-family: Times, serif; margin-right: 30px; ">crschmidt.net</span></a></div>
 </div>
 <ul id="navlinks">
-    <li><a href="/mapping/">mapping</a>    </li>
-    <li><a href="/semweb/">semweb</a>    </li>
-    <li><a href="/foaf/">foaf</a></li>
-    <li><a href="/formal/">formal</a></li>
-    <li><a href="/services/">services</a></li>
-    <li><a href="/symbian/">symbian</a>    </li>
-    <li><a href="/python/">python</a>    </li>
-    <li><a href="/povray/">povray</a>    </li>
-    <li><a href="/blog/">weblog</a>    </li>
-    <li><a href="/noets/">noets</a></li>
-    <li><a href="http://flickr.com/photos/crschmidt/">photos</a>    </li>
+    <li><a href="/blog/">Blog</a>    </li>
+    <li><a href="http://flickr.com/photos/crschmidt/">Photos</a>    </li>
+    <li><a href="http://youtube.com/user/crschmidt/">Videos</a>    </li>
+    <li></li>
+    <li><a href="#">Older:</a></li>
+    <li><a href="/mapping/">Mapping</a>    </li>
+    <li><a href="/semweb/">Semweb</a>    </li>
+    <li><a href="/foaf/">FOAF</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/symbian/">Symbian</a>    </li>
+    <li><a href="/python/">Python</a>    </li>
+    <li><a href="/povray/">Povray</a>    </li>
     </ul>
     <br style="clear:both" />
 <div class="content">
@@ -62,7 +63,7 @@ try {
 var pageTracker = _gat._getTracker("UA-2577731-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-<p class="credit"><cite>Copyright 2003-2007, Christopher Schmidt</cite></p>
+<p class="credit"><cite>Copyright 2003-2014, Christopher Schmidt</cite></p>
 </body>
 </html>
 

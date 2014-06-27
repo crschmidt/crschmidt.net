@@ -16,9 +16,9 @@
         <h3>Contact</h3>
         <ul style="margin-left:0px;padding-left:20px">
             <li>Email: <a href="mailto:crschmidt@crschmidt.net">crschmidt@crschmidt.net</a></li>
-            <li>AIM: cr5chmidt</li>
-            <li>Skype: cr5chmidt</li>
-            <li><a href="/formal/resume.txt">Resume</a></li>
+            <li><a href="https://www.facebook.com/crschmidt">Facebook</a>, <a href="http://twitter.com/crschmidt">Twitter</a>, <a href="https://plus.google.com/+ChristopherSchmidtcrs/posts">Google+</a></li>
+            
+<!--            <li><a href="/formal/resume.txt">Resume</a></li> -->
         </ul>
 <?php
 
@@ -55,7 +55,7 @@ if ( $url ) {
 include "links_include.php"
 ?>    </div>
 <p>
-<ul>
+<ul id="mainlist">
   <li>
     I fly <a href="http://www.flickr.com/photos/nprnncbl/13317084063/">a quadcopter</a>.
   </li>
@@ -64,6 +64,9 @@ include "links_include.php"
   </li>
   <li>
     I <a href="https://www.youtube.com/playlist?list=PLjj2uycFdhzBsNJt0mGqivf960lE9R673">3d print things</a>.
+  </li>
+  <li>
+    I have a <a href="http://crschmidt.net/blog/">blog</a>.
   </li>
   <li>
     I live in Cambridge, Massachusetts.
@@ -75,7 +78,7 @@ include "links_include.php"
 
 <h2 style="margin-bottom: 0px;" >Recent Creations</h2>
 <div class="homepageblock">
-<h3>Response to FAA</h3>
+<h3>Blog Post: Response to FAA Policy Document</h3>
 <a href="http://crschmidt.net/blog/archives/696/response-to-new-faa-policy-document/">Response to FAA policy document</a>, a blog post detailing my response to their stated new policies around UAV prosecution.
 <blockquote>This entire policy is based on a mistaken notion that the “the FAA has considered model aircraft to be aircraft that fall within the statutory and regulatory definitions of an aircraft”; the definition that the FAA uses ...  is so broad as to describe everything from a commercial jetliner to a paper airplane</blockquote>
 <small>June 25th, 2014</small>
@@ -104,10 +107,49 @@ One minute clips of flying the quadcopter (mostly) around Cambridge, MA includin
 </div>
 
 <div class="homepageblock">
+<h3>On Technology</h3>
+<blockquote class="twitter-tweet" lang="en"><p>A friend today asked &quot;Have you ever in your entire life *casually* adopted a technology?&quot; My answer? &quot;I don&#39;t understand the question.&quot;</p>&mdash; Christopher Schmidt (@crschmidt) <a href="https://twitter.com/crschmidt/statuses/466043504222011393">May 13, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="homepageblock">
+<h3>Blog Post: Is that a Drone?</h3>
+<blockquote>... Of course, with any new technology, there are a set of FAQs that you should expect. The Quad is no exception.</blockquote>
+<a href="http://crschmidt.net/blog/archives/667/is-that-a-drone-adventures-with-a-quadcopter/">Information about my quadcopter, including an FAQ.</a> Includes answers to the most common questions I get; these later got turned into a business card I printed for myself to bring with when I go flying.
+<small>Apr 24th, 2014</small>
+</div>
+
+
+<br clear="both" />
+
+<h2>Older</h2>
+
+<div class="homepageblock">
+<h3>Initial Forays into 3D Printing</h3>
+<iframe src="https://www.flickr.com/photos/crschmidt/12013178695/player/" width="320" height="213" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+<br /><a href="http://crschmidt.net/blog/archives/645/initial-forays-into-3d-printing/">My first steps in 3d printing</a>.
+<small>Jan 19th, 2014</small>
+</div>
+
+<div class="homepageblock">
 <h3>3D Printer Assembly</h3>
 <iframe width="350" height="240" src="//www.youtube.com/embed/C7XUY3wFb74" frameborder="0" allowfullscreen></iframe>
 Time lapse of assembley of Printrbot 3D printer.
 <small>Jan 11, 2014</small>
+</div>
+<div class="homepageblock">
+<h3>African Safari</h3>
+<iframe src="https://www.flickr.com/photos/crschmidt/2936441550/in/set-72157607880167906/player/" width="320" height="213" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+Photos from Kruger National Park visit.
+<small>October, 2008</small>
+</div>
+
+<div class="homepageblock">
+<h3>OpenLayers Tutorial</h3>
+<iframe width="350" height="240" src="//www.youtube.com/embed/WJt0rAyD2xU" frameborder="0" allowfullscreen></iframe>
+My <a href="http://crschmidt.net/blog/archives/661/openlayers-still-popular-on-youtube-years-later/">most popular YouTube video</a>.
+<small>Fall, 2007</small>
 </div>
 
 <br clear="both" />

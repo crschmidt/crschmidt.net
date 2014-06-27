@@ -189,3 +189,6 @@ font-size:.95em;
   margin: 0px 10px;
   min-height: 350px;
 }
+#mainlist li {
+  display: inline;
+ }
